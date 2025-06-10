@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Winshine Finishers</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="main-header">
+        <div class="top-bar">
+            <div class="container">
+                <div class="contact-info">
+                    <span><i class="fas fa-phone"></i> +254725760297</span>
+                    <span><i class="fas fa-envelope"></i> info@winshinefinishers.com</span>
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <nav class="main-nav">
+            <div class="container">
+                <div class="logo-container">
+                    <div class="logo">
+                        <i class="fas fa-house"></i>
+                        <i class="fas fa-hammer"></i>
+                    </div>
+                    <h1 class="logo-text">Winshine Finishers Interiors</h1>
+                </div>
+                <button class="menu-toggle" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="#" class="nav-link active">Home</a></li>
+                    <li><a href="#products" class="nav-link">Products</a></li>
+                    <li><a href="#about" class="nav-link">About Us</a></li>
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Slider Section -->
+    <section class="hero-slider">
+        <div class="slider-container">
+            <!-- Slide 1 - Showroom -->
+            <div class="slide active" style="background-image: url('showroom.jpg');">
+                <div class="slide-content">
+                    <h2>Your Trusted Partner in Quality Hardware</h2>
+                    <p>Providing top-notch hardware solutions and construction materials for all your building needs.</p>
+                    <a href="#contact" class="cta-button">Get a Quote</a>
+                </div>
+            </div>
+            <!-- Slide 2 - Building Tools -->
+            <div class="slide" style="background-image: url('Building tools.jpg');">
+                <div class="slide-content">
+                    <h2>Premium Quality Tools & Equipment</h2>
+                    <p>Discover our wide range of professional tools for all your construction needs.</p>
+                    <a href="#products" class="cta-button">View Products</a>
+                </div>
+            </div>
+            <!-- Slide 3 - Paints -->
+            <div class="slide" style="background-image: url('crown paints.jpg');">
+                <div class="slide-content">
+                    <h2>Wide Range of Premium Paints</h2>
+                    <p>High-quality paints for all your interior and exterior needs in various colors and finishes.</p>
+                    <a href="#products" class="cta-button">Explore Paints</a>
+                </div>
+            </div>
+            <!-- Slide 4 - Construction Materials -->
+            <div class="slide" style="background-image: url('Gypsum-board-HADA.webp');">
+                <div class="slide-content">
+                    <h2>Quality Building Materials</h2>
+                    <p>High-quality materials for all your construction and renovation projects.</p>
+                    <a href="#products" class="cta-button">Shop Now</a>
+                </div>
+            </div>
+            <!-- Slide 5 -->
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1600607687687-1e80a90a5a32?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');">
+                <div class="slide-content">
+                    <h2>Modern Architectural Solutions</h2>
+                    <p>Innovative designs and materials for contemporary construction projects.</p>
+                    <a href="#products" class="cta-button">View Projects</a>
+                </div>
+            </div>
+            <!-- Navigation Buttons -->
+            <button class="slider-nav prev">❮</button>
+            <button class="slider-nav next">❯</button>
+            <!-- Pagination Dots -->
+            <div class="slider-dots">
+                <span class="dot active" data-slide="0"></span>
+                <span class="dot" data-slide="1"></span>
+                <span class="dot" data-slide="2"></span>
+                <span class="dot" data-slide="3"></span>
+                <span class="dot" data-slide="4"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section id="products" class="featured-products">
+        <div class="container">
+            <h2>Our Products</h2>
+            
+            <!-- Category Tabs -->
+            <div class="category-tabs">
+                <button class="tab-btn active" data-category="all">All Products</button>
+                <button class="tab-btn" data-category="materials">Building Materials</button>
+                <button class="tab-btn" data-category="paints">Paints & Coatings</button>
+                <button class="tab-btn" data-category="tools">Tools & Equipment</button>
+                <button class="tab-btn" data-category="plumbing">Plumbing</button>
+                <button class="tab-btn" data-category="hardware">Hardware & Accessories</button>
+            </div>
+            
+            <div class="image-grid">
+                <!-- Building Materials -->
+                <div class="image-item" data-category="materials">
+                    <img src="panels.jpg" alt="Wall Panels">
+                    <div class="image-caption">
+                        <h3>Wall Panels</h3>
+                        <p>From Ksh 1,500 per sheet</p>
+                    </div>
+                </div>
+                
+                <div class="image-item" data-category="materials">
+                    <img src="body filler.jpg" alt="Body Filler">
+                    <div class="image-caption">
+                        <h3>Body Filler</h3>
+                        <p>From Ksh 1,200 per kg</p>
+                    </div>
+                </div>
+                
+                <div class="image-item" data-category="materials">
+                    <img src="skim coat.jpg" alt="Skim Coat">
+                    <div class="image-caption">
+                        <h3>Skim Coat</h3>
+                        <p>From Ksh 2,500 per bag</p>
+                    </div>
+                </div>
+                
+                <div class="image-item" data-category="materials">
+                    <img src="ponal.jpg" alt="Ponal Wood Glue">
+                    <div class="image-caption">
+                        <h3>Ponal Wood Glue</h3>
+                        <p>From Ksh 1,000 per liter</p>
+                    </div>
+                </div>
+                
+                <div class="image-item" data-category="materials">
+                    <img src="Gypsum-board-HADA.webp" alt="Gypsum Boards">
+                    <div class="image-caption">
+                        <h3>Gypsum Boards</h3>
+                        <p>From Ksh 900 per sheet</p>
+                    </div>
+                </div>
+                
+                <div class="image-item" data-category="materials">
+                    <img src="skim coat.jpg" alt="Skim Coat">
+                    <div class="image-caption">
+                        <h3>Skim Coat</h3>
+                        <p>From Ksh 1,300</p>
+                    </div>
+                </div>
+                
+                <div class="image-item" data-category="materials">
+                    <img src="Conta_Gule multi.jpg" alt="Conta Glue">
+                    <div class="image-caption">
+                        <h3>Conta Glue</h3>
+                        <p>From Ksh 150</p>
+                    </div>
+                </div>
+                
+                <div class="image-item" data-category="materials">
+                    <img src="Blue-Essentials-Gypsum-Screws-@650.jpg" alt="Gypsum Screws">
+                    <div class="image-caption">
+                        <h3>Gypsum Screws</h3>
+                        <p>Ksh 650</p>
+                    </div>
+                </div>
+                
+                <!-- Paints & Coatings -->
+                <div class="image-item" data-category="paints">
+                    <img src="paints.jpg" alt="Paints & Coatings">
+                    <div class="image-caption">
+                        <h3>Paints & Coatings</h3>
+                        <p>From Ksh 3,000 per 4L</p>
+                    </div>
+                </div>
+                
+                <div class="image-item" data-category="paints">
+                    <img src="Duracoat-Superfast-1.jpg" alt="Duracoat Superfast">
+                    <div class="image-caption">
+                        <h3>Duracoat Superfast</h3>
+                        <p>From Ksh 4,000 per 20L</p>
+                    </div>
+                </div>
+                
+                <div class="image-item" data-category="paints">
+                    <img src="green-tip-brush-4.webp" alt="Paint Brushes">
+                    <div class="image-caption">
+                        <h3>Paint Brushes</h3>
+                        <p>From Ksh 250</p>
+                    </div>
+                </div>
+                
+                <!-- Tools & Equipment -->
+                <div class="image-item" data-category="tools">
+                    <img src="accessories.jpg" alt="Accessories">
+                    <div class="image-caption">
+                        <h3>Accessories</h3>
+                        <p>Inquire for price</p>
+                    </div>
+                </div>
+                
+                <div class="image-item" data-category="paints">
+                    <img src="basco.jpg" alt="Basco Paints" onerror="this.src='https://via.placeholder.com/300x200?text=Basco+Paints';">
+                    <div class="image-caption">
+                        <h3>Basco Paints</h3>
+                        <p>From Ksh 2,100</p>
+                    </div>
+                </div>
+                
+                <div class="image-item" data-category="plumbing">
+                    <img src="skim coat.jpg" alt="Skim Coat" onerror="this.src='https://via.placeholder.com/300x200?text=Skim+Coat';">
+                    <div class="image-caption">
+                        <h3>Skim Coat</h3>
+                        <p>From Ksh 1,350</p>
+                    </div>
+                </div>
+                
+                <div class="image-item" data-category="materials">
+                    <img src="tangit.jpg" alt="Tangit Adhesive">
+                    <h3>Tangit</h3>
+                    <p>High-quality adhesive for various construction needs.</p>
+                    <div class="price">From Ksh 250</div>
+                </div>
+                
+                <div class="image-item" data-category="waterproofing">
+                    <img src="Dr fix it.jpg" alt="Dr. Fix It Waterproofing" onerror="this.src='https://via.placeholder.com/300x200?text=Dr+Fix+It';">
+                    <h3>Dr. Fix It</h3>
+                    <p>Premium waterproofing solutions for all your construction needs.</p>
+                    <div class="price">From Ksh 1,200</div>
+                </div>
+                
+                <div class="image-item" data-category="tools">
+                    <img src="construction tools.jpg" alt="Construction tools">
+                    <h3>Construction Tools</h3>
+                    <p>High quality construction tools for all your construction needs.</p>
+                    <div class="price">Inquire for pricing</div>
+                </div>
+                
+                <!-- Plumbing -->
+                <div class="image-item" data-category="plumbing">
+                    <img src="ppr.jpg" alt="PPR Fittings">
+                    <h3>PPR</h3>
+                    <p>Durable and reliable PPR fittings for plumbing systems.</p>
+                    <div class="price">From Ksh 150</div>
+                </div>
+
+                <div class="image-item" data-category="plumbing">
+                    <img src="wash basin screw.jpg" alt="Wash Basin Screw">
+                    <h3>Wash Basin Screw</h3>
+                    <p>High-quality screws for secure wash basin installation.</p>
+                    <div class="price">From Ksh 150</div>
+                </div>
+
+                <div class="image-item" data-category="plumbing">
+                    <img src="Top flash cistern valve.jpg" alt="Top Flash Valve">
+                    <div class="image-caption">
+                        <h3>Top Flash Valve</h3>
+                        <p>From Ksh 2,500</p>
+                    </div>
+                </div>
+
+                <!-- Cornices Section -->
+                <div class="cornices-section">
+                    <div class="image-item" data-category="materials">
+                        <img src="plain cornice.jpg" alt="Cornices" onerror="this.src='https://via.placeholder.com/300x200?text=Cornices';">
+                        <div class="image-caption">
+                            <h3>Cornices</h3>
+                            <p>Elegant decorative cornices for beautiful ceiling edges.</p>
+                            <div class="price">From Ksh 130</div>
+                            <button class="see-more-btn" onclick="toggleCornices()">See More cornices</button>
+                        </div>
+                    </div>
+
+                    <!-- Additional Cornices Cards (initially hidden) -->
+                    <div class="additional-cornices" id="additional-cornices" style="display: none;">
+                        <div class="image-item" data-category="materials">
+                            <img src="cornice A083.jpg" alt="Ornate Cornice" onerror="this.src='https://via.placeholder.com/300x200?text=Ornate+Cornice';">
+                            <div class="image-caption">
+                                <h3>A083 cornices</h3>
+                                <p>Elaborate decorative cornice with intricate details.</p>
+                                <div class="price">From Ksh 130</div>
+                            </div>
+                        </div>
+
+                        <div class="image-item" data-category="materials">
+                            <img src="Cornice-Plain-400x400.jpg" alt="Modern Cornice" onerror="this.src='https://via.placeholder.com/300x200?text=Modern+Cornice';">
+                            <div class="image-caption">
+                                <h3>Plain cornices</h3>
+                                <p>Sleek, contemporary cornice design.</p>
+                                <div class="price">From ksh 130</div>
+                            </div>
+                        </div>
+                        <div class="image-item" data-category="materials">
+                            <img src="PU-CORNICE-FLOWER.webp" alt="Classic Cornice" onerror="this.src='https://via.placeholder.com/300x200?text=Classic+Cornice';">
+                            <div class="image-caption">
+                                <h3>PU Flower cornices</h3>
+                                <p>Timeless traditional cornice design.</p>
+                                <div class="price">From Ksh 130</div>
+                            </div>
+                        </div>
+                        <div class="image-item" data-category="materials">
+                            <img src="gypsum-cornice-1000x1000.webp" alt="Luxury Cornice" onerror="this.src='https://via.placeholder.com/300x200?text=Luxury+Cornice';">
+                            <div class="image-caption">
+                                <h3>Luxury Cornice</h3>
+                                <p>Premium cornice with gold accents.</p>
+                                <div class="price">From Ksh 130</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Marble Sheets -->
+                <div class="image-item" data-category="materials">
+                    <img src="marble sheet.jpg" alt="Marble Sheets" onerror="this.src='https://via.placeholder.com/300x200?text=Marble+Sheets';">
+                    <div class="image-caption">
+                        <h3>Marble Sheets</h3>
+                        <p>Premium quality marble sheets for luxurious finishes.</p>
+                        <div class="price">From Ksh 3000 per sheet</div>
+                    </div>
+                </div>
+
+                    <!-- Plugs -->
+                    <div class="image-item" data-category="plumbing">
+                        <img src="plugs.jpg" alt="Plugs" onerror="this.src='https://via.placeholder.com/300x200?text=Plugs';">
+                        <div class="image-caption">
+                            <h3>Wall Plugs</h3>
+                            <p>Durable plugs for various applications.</p>
+                            <div class="price">From Ksh 150 each</div>
+                        </div>
+                    </div>
+
+                <div class="image-item" data-category="paints">
+                    <img src="spray paint.jpg" alt="Spray Paints">
+                    <h3>Spray Paints</h3>
+                    <p>Wide range of colors and finishes for professional results.</p>
+                    <div class="price">From Ksh 350 per can</div>
+                </div>
+
+                <div class="image-item" data-category="tools">
+                    <img src="Three-Stars-Round-Head-Shoe-Nail-Shoes-Tacks.jpg" alt="Waterproofing">
+                    <h3>Waterproofing</h3>
+                    <p>High-quality waterproofing solutions for all surfaces.</p>
+                    <div class="price">Inquire for pricing</div>
+                </div>
+                
+                <!-- New Tools Items -->
+                <div class="image-item" data-category="tools">
+                    <img src="silicone gun.jpg" alt="Silicone Gun">
+                    <div class="image-caption">
+                        <h3>Silicone Gun</h3>
+                        <p>From Ksh 350</p>
+                    </div>
+                </div>
+                
+                <div class="image-item" data-category="tools">
+                    <img src="cutting disk.jpg" alt="Cutting Disk">
+                    <div class="image-caption">
+                        <h3>Cutting Disk</h3>
+                        <p>From Ksh 250</p>
+                    </div>
+                </div>
+                
+                <div class="image-item" data-category="materials">
+                    <img src="mdf boards.jpg" alt="MDF Boards">
+                    <div class="image-caption">
+                        <h3>MDF Boards</h3>
+                        <p>From Ksh 3500 per sheet</p>
+                    </div>
+                </div>
+                
+                <div class="image-item" data-category="tools">
+                    <img src="pliers.jpg" alt="Pliers">
+                    <div class="image-caption">
+                        <h3>Pliers</h3>
+                        <p>From Ksh 450</p>
+                    </div>
+                </div>
+                
+                <!-- Studs, Channels, and ITH -->
+                <div class="image-item" data-category="materials">
+                    <img src="Gypsum-ceiling-stud.jpg" alt="Metal Studs" onerror="this.src='https://via.placeholder.com/300x200?text=Metal+Studs';">
+                    <div class="image-caption">
+                        <h3>Metal Studs</h3>
+                        <p>High-quality metal studs for drywall framing</p>
+                        <div class="price">From Ksh 115per piece</div>
+                    </div>
+                </div>
+                
+                <div class="image-item" data-category="materials">
+                    <img src="channels.jpg" alt="Furring Channels" onerror="this.src='https://via.placeholder.com/300x200?text=Furring+Channels';">
+                    <div class="image-caption">
+                        <h3>Furring Channels</h3>
+                        <p>Durable furring channels for ceiling and wall applications</p>
+                        <div class="price">From Ksh 115 per piece</div>
+                    </div>
+                </div>
+                
+                <div class="image-item" data-category="materials">
+                    <img src="WOOD-FILLER.jpg" alt="Wood Filler" onerror="this.src='https://via.placeholder.com/300x200?text=Wood+Filler';">
+                    <div class="image-caption">
+                        <h3>Wood Filler</h3>
+                        <p>High-quality wood filler for seamless repairs and finishing</p>
+                        <div class="price">From Ksh 500</div>
+                    </div>
+                </div>
+                
+                <div class="image-item" data-category="materials">
+                    <img src="gypsum filler.png"alt="Gyproc Filler" onerror="this.src='https://via.placeholder.com/300x200?text=Gyproc+Filler';">
+                    <div class="image-caption">
+                        <h3>Gyproc Filler</h3>
+                        <p>Premium quality filler for seamless joints</p>
+                        <div class="price">From Ksh 1350</div>
+                    </div>
+                </div>
+
+                <div class="image-item" data-category="tools">
+                    <img src="jig saw blade.jpg" alt="Jig Saw Blade">
+                    <div class="image-caption">
+                        <h3>Jig Saw Blade</h3>
+                        <p>From Ksh 400</p>
+                    </div>
+                </div>
+                
+                <div class="image-item" data-category="plumbing">
+                    <img src="mixer taps.jpg" alt="Mixer Taps">
+                    <div class="image-caption">
+                        <h3>Mixer Taps</h3>
+                        <p>From Ksh 3500</p>
+                    </div>
+                </div>
+                
+                <div class="image-item" data-category="paints">
+                    <img src="dark oak vanish.jpg" alt="Dark Oak Varnish">
+                    <div class="image-caption">
+                        <h3>Dark Oak Varnish</h3>
+                        <p>From Ksh 300</p>
+                    </div>
+                </div>
+                
+                <div class="image-item" data-category="plumbing">
+                    <img src="float switch.jpg" alt="Float Switch">
+                    <div class="image-caption">
+                        <h3>Float Switch</h3>
+                        <p>From Ksh 950</p>
+                        <div class="price">From Ksh 950</div>
+                    </div>
+                </div>
+                
+                <div class="image-item" data-category="tools">
+                    <img src="allan key.jpg" alt="Allan Key" onerror="this.src='https://via.placeholder.com/300x200?text=Allan+Key';">
+                    <div class="image-caption">
+                        <h3>Allan Key Set</h3>
+                        <p>From Ksh 200</p>
+                        <div class="price">From Ksh 200</div>
+                    </div>
+                </div>
+                
+                <div class="image-item" data-category="plumbing">
+                    <img src="interior.jpg" alt="Plumbing Tools" onerror="this.src='https://via.placeholder.com/300x200?text=Plumbing+Tools';">
+                    <div class="image-caption">
+                        <h3>Plumbing Tools</h3>
+                        <p>From Ksh 30 - Ksh 350</p>
+                        <div class="price">From Ksh 30 - Ksh 350</div>
+                    </div>
+                </div>
+                
+                <div class="image-item" data-category="plumbing">
+                    <img src="water.jpg" alt="Plumbing Fittings" onerror="this.src='https://via.placeholder.com/300x200?text=Plumbing+Fittings';">
+                    <div class="image-caption">
+                        <h3>Plumbing Fittings</h3>
+                        <p>From Ksh 30 - Ksh 350</p>
+                        <div class="price">From Ksh 30 - Ksh 350</div>
+                    </div>
+                </div>
+                
+                <div class="image-item" data-category="plumbing">
+                    <img src="toilet bowls.jpg" alt="Toilet bowls" onerror="this.src='https://via.placeholder.com/300x200?text=Toilet+bowls';">
+                    <div class="image-caption">
+                        <h3>Toilet Bowls</h3>
+                        <p>High quality toilet bowls for all your finishing needs.</p>
+                        <div class="price">Inquire for pricing</div>
+                    </div>
+                </div>
+                
+                <div class="image-item" data-category="hardware">
+                    <img src="rods.jpg" alt="Curtain Rods" onerror="this.src='https://via.placeholder.com/300x200?text=Curtain+Rods';">
+                    <div class="image-caption">
+                        <h3>Curtain Rods</h3>
+                        <p>From Ksh 850</p>
+                        <div class="price">From Ksh 850</div>
+                    </div>
+                </div>
+                
+                <div class="image-item" data-category="hardware">
+                    <img src="Mindy padlock.jpg" alt="Mindy Padlock" onerror="this.src='https://via.placeholder.com/300x200?text=Mindy+Padlock';">
+                    <div class="image-caption">
+                        <h3>Mindy Padlock</h3>
+                        <p>High-security padlocks for various applications</p>
+                        <div class="price">From Ksh 800</div>
+                    </div>
+                </div>
+                
+                <div class="image-item" data-category="tools">
+                    <img src="Sandpaper.jpg" alt="Sandpaper" onerror="this.src='https://via.placeholder.com/300x200?text=Sandpaper';">
+                    <div class="image-caption">
+                        <h3>Sandpaper</h3>
+                        <p>Assorted grit sandpaper for surface preparation</p>
+                        <div class="price">From Ksh 50 per sheet</div>
+                    </div>
+                </div>
+                
+                <!-- Moved from Plumbing to Tools & Equipment -->
+                <div class="image-item" data-category="tools">
+                    <img src="hand rivet.jpg" alt="Hand Rivet" onerror="this.src='https://via.placeholder.com/300x200?text=Hand+Rivet';">
+                    <div class="image-caption">
+                        <h3>Hand Rivet</h3>
+                        <p>From Ksh 450</p>
+                    </div>
+                </div>
+                <div class="image-item" data-category="tools">
+                    <img src="g clamp.jpg" alt="G-Clamp">
+                    <div class="image-caption">
+                        <h3>G-Clamp</h3>
+                        <p>From Ksh 1500</p>
+                    </div>
+                </div>
+                <div class="image-item" data-category="tools">
+                    <img src="Jk files.jpg" alt="JK File">
+                    <div class="image-caption">
+                        <h3>JK File</h3>
+                        <p>From Ksh 220</p>
+                    </div>
+                </div>
+                <div class="image-item" data-category="tools">
+                    <img src="wood chisel.jpg" alt="Wood Chisel">
+                    <div class="image-caption">
+                        <h3>Plastic chisel</h3>
+                        <p>From Ksh 250</p>
+                    </div>
+                </div>
+                <div class="image-item" data-category="tools">
+                    <img src="mason hammer.jpg" alt="Mason Hammer">
+                    <div class="image-caption">
+                        <h3>Mason Hammer</h3>
+                        <p>From Ksh 550</p>
+                    </div>
+                </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About Winshine Finishers Interiors</h2>
+                    <p>With over years of experience in the industry, Winshine Finishers has been providing top-quality hardware and construction materials to both residential and commercial clients.</p>
+                    <ul class="features-list">
+                        <li><i class="fas fa-check"></i> Premium Quality Products</li>
+                        <li><i class="fas fa-check"></i> Competitive Pricing</li>
+                        <li><i class="fas fa-check"></i> Expert Advice</li>
+                        <li><i class="fas fa-check"></i> Reliable Delivery</li>
+                    </ul>
+                </div>
+                <div class="about-image">
+                    <img src="showroom.jpg" alt="Our Showroom">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-truck"></i>
+                    <h3>Free Delivery</h3>
+                    <p>Free delivery on orders over Ksh. 50,000 within Ruiru.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-tools"></i>
+                    <h3>Installation</h3>
+                    <p>Professional installation services by our expert team.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-headset"></i>
+                    <h3>24/7 Support</h3>
+                    <p>Our customer service team is always ready to help.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/react@17.0.2/umd/react.development.js"></script>
+  <script src="script.js"></script>
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <p class="section-subtitle">We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Our Location</h3>
+                            <p>Eastern Bypass off Thika Rd ,Next to Exit 11 inn</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Phone Number</h3>
+                            <p>+254 725760297</p> 
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Email Address</h3>
+                            <p>info@winshinefinishers.com</p>
+                            <p>sales@winshinefinishers.com</p>
+                        </div>
+                    </div>
+                
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Working Hours</h3>
+                            <p>Monday - Saturday: 7:00 AM - 6:00 PM</p>
+                            <p>Sunday: Closed</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="phone" name="phone" placeholder="Your Phone">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100, // Adjust for fixed header
+                        behavior: 'smooth'
+                    }); 
+                    
+                    // Close mobile menu if open
+                    const navLinks = document.querySelector('.nav-links');
+                    if (navLinks && navLinks.classList.contains('active')) {
+                        navLinks.classList.remove('active');
+                        const menuToggle = document.querySelector('.menu-toggle');
+                        if (menuToggle) {
+                            menuToggle.setAttribute('aria-expanded', 'false');
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="logo-container">
+                        <div class="logo">                                                                              
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3 class="logo-text">Winshine <span>Finishers Interiors</span></h3>
+                    </div>
+                    <p class="footer-tagline">Your trusted partner for premium construction materials and expert finishing solutions. Committed to quality and excellence in every project.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Eastern Bypass,off Thika Rd,Next to Exit 11 Inn.</li>
+                        <li><i class="fas fa-phone"></i> +254725760297</li>
+                        <li><i class="fas fa-envelope"></i> info@winshinefinishers.com</li>
+                        <li><i class="fas fa-clock"></i> Mon-Saturday: 7:00 AM - 6:00 PM</li>
+                    </ul>
+                </div>
+
+                <div class="footer-newsletter">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe to our newsletter for the latest updates and offers.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Made by Roseline Njoki with ❤. All Rights Reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <span>|</span>
+                    <a href="#">Terms & Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
