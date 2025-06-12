@@ -1011,42 +1011,44 @@ img {
     margin: 0;
 }
 
-/* Responsive adjustments */
-@media (max-width: 1200px) {
-    .image-item,
-    .additional-cornices .image-item {
-        flex: 1 1 calc(33.333% - 20px); /* 3 items per row */
-        max-width: none;
-    }
-}
-
-@media (max-width: 900px) {
-    .image-item,
-    .additional-cornices .image-item {
-        flex: 1 1 calc(50% - 20px); /* 2 items per row */
-        max-width: none;
-    }
-}
-
-@media (max-width: 600px) {
-    .image-item,
-    .additional-cornices .image-item {
-        flex: 1 1 100%; /* 1 item per row */
-        max-width: 100%;
-    }
+/* Consistent card size across all screen sizes */
+.image-item {
+    flex: 0 0 300px;
 }
 
 /* Main grid container for products */
 .image-grid {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap; /* Prevent wrapping to new lines */
     gap: 20px;
     width: 100%;
-    max-width: 1600px;
+    max-width: 100%;
     margin: 0 auto;
     padding: 20px;
     box-sizing: border-box;
-    justify-content: center; /* Center items in the grid */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    scrollbar-width: thin;
+    scrollbar-color: #888 #f1f1f1;
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+}
+
+/* Custom scrollbar for WebKit browsers */
+.image-grid::-webkit-scrollbar {
+    height: 8px;
+}
+
+.image-grid::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.image-grid::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.image-grid::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }
 
 /* Cornices section container */
@@ -1056,11 +1058,11 @@ img {
 
 /* Base styles for image items */
 .image-item {
-    flex: 1 1 calc(25% - 20px); /* 4 items per row by default */
-    min-width: 250px;
-    max-width: 300px;
+    flex: 0 0 300px; /* Fixed width for each card */
+    min-width: 280px;
     margin: 10px;
     transition: transform 0.3s ease;
+    scroll-snap-align: start; /* Better scrolling experience */
 }
 
 /* Cornices container - now part of the main grid */
@@ -1082,40 +1084,21 @@ img {
 
 /* Additional cornices items */
 .additional-cornices .image-item {
-    flex: 1 1 calc(25% - 20px);
-    min-width: 250px;
-    max-width: 300px;
+    flex: 0 0 300px;
+    min-width: 280px;
     margin: 10px;
 }
 
 /* Regular image items */
 .image-item {
-    flex: 0 0 calc(25% - 20px);
-    max-width: 300px;
-    margin: 0;
+    flex: 0 0 300px;
+    margin: 10px;
 }
 
-/* Responsive adjustments */
-@media (max-width: 1200px) {
-    .additional-cornices .image-item,
-    .cornices-container > .image-item:first-child {
-        flex: 0 0 calc(33.333% - 20px);
-    }
-}
-
-@media (max-width: 900px) {
-    .additional-cornices .image-item,
-    .cornices-container > .image-item:first-child {
-        flex: 0 0 calc(50% - 20px);
-    }
-}
-
-@media (max-width: 600px) {
-    .additional-cornices .image-item,
-    .cornices-container > .image-item:first-child {
-        flex: 0 0 100%;
-        max-width: 100%;
-    }
+/* Consistent cornices card size */
+.additional-cornices .image-item,
+.cornices-container > .image-item:first-child {
+    flex: 0 0 300px;
 }
 
 .see-more-btn {
