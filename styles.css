@@ -1182,9 +1182,9 @@ img {
     
     .image-grid {
         display: grid;
-        grid-template-columns: 1fr 1fr; /* Fixed 2 columns */
-        gap: 12px;
-        padding: 10px;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+        padding: 15px;
         width: 100%;
         box-sizing: border-box;
     }
@@ -1193,36 +1193,34 @@ img {
         display: flex;
         flex-direction: column;
         background: white;
-        border-radius: 8px;
-        overflow: visible;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        height: auto;
-        min-height: 0; /* Reset minimum height */
-        height: 100%;
-        background: white;
-        border-radius: 8px;
+        border-radius: 12px;
         overflow: hidden;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+        height: auto;
+        min-height: 0;
+        aspect-ratio: 3/4; /* Better aspect ratio for product cards */
     }
     
     .image-item img {
         width: 100%;
-        height: auto;
-        max-height: 160px;
+        height: 0;
+        padding-bottom: 100%; /* Creates a square container */
         object-fit: contain;
-        padding: 15px;
+        object-position: center;
         background: #f8f8f8;
-        margin: 0 auto;
+        position: relative;
         display: block;
+        margin: 0 auto;
     }
     
     .image-caption {
-        padding: 8px 5px 12px;
+        padding: 12px 8px;
         text-align: center;
         flex-grow: 1;
         display: flex;
         flex-direction: column;
-        justify-content: flex-end;
+        justify-content: center;
+        min-height: 80px; /* Ensure consistent height for captions */
     }
     
     .image-caption h3 {
