@@ -966,11 +966,11 @@ img {
 
 /* Main grid container for products */
 .image-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
     width: 100%;
-    max-width: 1600px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 20px;
     box-sizing: border-box;
@@ -1005,22 +1005,86 @@ img {
     margin: 0;
 }
 
-/* Regular image items */
+/* Product card container */
 .image-item {
     display: flex;
     flex-direction: column;
+    background: #fff;
+    border-radius: 10px;
     overflow: hidden;
-    border-radius: 8px;
-    background: white;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    position: relative;
+    height: auto; /* Changed from 100% to auto for better content flow */
+    /* Ensure all direct children are in column layout */
+}
+
+/* Ensure all direct children of image-item stack vertically */
+.image-item > * {
+    width: 100%;
+    box-sizing: border-box;
+    display: block;
+}
+
+.image-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* Fix for any direct h3, p, .price that might be direct children */
+.image-item > h3,
+.image-item > p,
+.image-item > .price {
+    padding: 0 18px;
+    margin: 8px 0 0 0;
+}
+
+.image-item > h3 {
+    font-size: 1.1rem;
+    color: #2d3748;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.image-item > p {
+    color: #4a5568;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+
+.image-item > .price {
+    color: var(--primary-color);
+    font-size: 1.15rem;
+    font-weight: 700;
+    padding-top: 12px;
+    margin-top: auto;
+    border-top: 1px solid #edf2f7;
+}
+
+/* Image container with fixed aspect ratio */
+.image-container {
+    position: relative;
+    width: 100%;
+    padding-top: 75%; /* 4:3 aspect ratio */
+    overflow: hidden;
+    background: #f8f9fa;
 }
 
 /* Image styles */
 .image-item img {
+    display: block;
     width: 100%;
-    height: 200px; /* Fixed height for consistency */
-    object-fit: cover; /* Cover the area while maintaining aspect ratio */
-    object-position: center; /* Center the image */
+    height: auto;
+    max-height: 300px;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    backface-visibility: hidden;
+}
+
+.image-item:hover img {
+    transform: scale(1.05);
 }
 
 /* Responsive adjustments */
@@ -1036,25 +1100,120 @@ img {
     }
 }
 
+/* Product card content */
+.image-caption {
+    padding: 16px 16px 20px;
+    display: block;
+    background: white;
+    border-top: 1px solid #f0f0f0;
+}
+
+.image-caption h3 {
+    margin: 0 0 6px 0;
+    font-size: 1.1rem;
+    color: #2d3748;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.image-caption p {
+    margin: 0 0 12px 0;
+    color: #4a5568;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Price styling */
+.price {
+    display: block;
+    color: var(--primary-color);
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid #edf2f7;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .image-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+        padding: 20px 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .image-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    .image-caption {
+        padding: 15px 12px;
+    }
+    
+    .image-caption h3 {
+        font-size: 1rem;
+    }
+    
+    .price {
+        font-size: 1.1rem;
+    }
+}
+
+/* Mobile styles - 600px and below */
 @media (max-width: 600px) {
+    .image-grid {
+        grid-template-columns: 2fr;
+        gap: 20px;
+        padding: 16px 12px;
+    }
+    
     .image-item,
     .additional-cornices .image-item,
     .cornices-container > .image-item:first-child {
-        flex: 0 0 calc(50% - 10px);
-        max-width: calc(50% - 10px);
-        margin: 5px;
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+    
+    /* Adjust image container for mobile */
+    .image-container {
+        padding-top: 0;
+        height: 200px;
     }
     
     .image-item img {
-        width: 100%;
-        height: 150px;
+        height: 100%;
+        max-height: 200px;
         object-fit: cover;
-        border-radius: 8px;
     }
     
-    .image-grid {
-        gap: 10px;
-        padding: 10px;
+    /* Improve caption readability on mobile */
+    .image-caption {
+        padding: 14px 16px 18px;
+        border-top: 1px solid #f0f0f0;
+    }
+    
+    .image-caption h3 {
+        font-size: 1.1rem;
+        margin-bottom: 8px;
+    }
+    
+    .image-caption p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+        margin-bottom: 12px;
+    }
+    
+    .price {
+        font-size: 1.15rem;
+        margin-top: 12px;
+        padding-top: 12px;
+        border-top: 1px solid #edf2f7;
     }
 }
 
