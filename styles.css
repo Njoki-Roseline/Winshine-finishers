@@ -208,21 +208,38 @@ img {
 /* Mobile-specific header styles */
 @media (max-width: 768px) {
     .main-header {
-        padding: 5px 0;
+        padding: 3px 0;
+        position: relative;
     }
     
-    .logo img {
-        max-height: 36px;
+    .top-bar {
+        padding: 4px 0;
+        font-size: 12px;
+    }
+    
+    .logo {
+        width: 60px;
+        height: 60px;
+        padding: 8px;
+    }
+    
+    .logo i {
+        font-size: 18px;
     }
     
     .menu-toggle {
-        width: 34px;
-        height: 34px;
+        width: 32px;
+        height: 32px;
+        font-size: 1.2rem;
+    }
+    
+    .main-nav {
+        padding: 5px 0;
     }
     
     .nav-links {
-        top: 56px; /* Reduced from 78px */
-        height: calc(100vh - 56px); /* Adjusted to match new header height */
+        top: 50px;
+        height: calc(100vh - 50px);
     }
 }
 
@@ -943,7 +960,7 @@ img {
 @media (max-width: 600px) {
     .additional-cornices .image-item {
         flex: 0 0 100%; /* 1 item per row on mobile */
-        max-width: 100%;
+
     }
 }
 
@@ -990,34 +1007,32 @@ img {
 
 /* Regular image items */
 .image-item {
-    flex: 0 0 calc(25% - 20px);
-    max-width: 300px;
-    margin: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: 8px;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Image styles */
+.image-item img {
+    width: 100%;
+    height: 200px; /* Fixed height for consistency */
+    object-fit: cover; /* Cover the area while maintaining aspect ratio */
+    object-position: center; /* Center the image */
 }
 
 /* Responsive adjustments */
-.image-item img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-}
-
 @media (max-width: 1200px) {
-    .image-item,
-    .additional-cornices .image-item,
-    .cornices-container > .image-item:first-child {
-        flex: 1 1 calc(33.333% - 24px);
-        min-width: 250px;
-        max-width: none;
+    .image-grid {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     }
 }
 
 @media (max-width: 900px) {
-    .image-item,
-    .additional-cornices .image-item,
-    .cornices-container > .image-item:first-child {
-        flex: 1 1 calc(50% - 24px);
-        min-width: 200px;
+    .image-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     }
 }
 
@@ -1025,8 +1040,21 @@ img {
     .image-item,
     .additional-cornices .image-item,
     .cornices-container > .image-item:first-child {
-        flex: 1 1 100%;
-        max-width: 100%;
+        flex: 0 0 calc(50% - 10px);
+        max-width: calc(50% - 10px);
+        margin: 5px;
+    }
+    
+    .image-item img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+    
+    .image-grid {
+        gap: 10px;
+        padding: 10px;
     }
 }
 
@@ -1898,15 +1926,16 @@ img {
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 36px;
-        height: 36px;
+        width: 32px;
+        height: 32px;
         background: var(--primary-color);
         color: white;
         border: none;
         border-radius: 4px;
         cursor: pointer;
         z-index: 1000;
-        transition: background-color 0.3s ease;
+        transition: all 0.3s ease;
+        padding: 0;
     }
     
     .menu-toggle:hover {
@@ -1965,14 +1994,29 @@ img {
     }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 600px) {
     .top-bar .container {
-        flex-direction: column;
-        text-align: center;
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+        padding: 0 10px;
     }
     
     .contact-info {
-        margin-bottom: 10px;
+        margin-bottom: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    
+    .contact-info span {
+        margin-right: 0;
+        font-size: 12px;
+    }
+    
+    .social-links a {
+        margin-left: 10px;
+        font-size: 16px;
     }
     
     .hero h1 {
