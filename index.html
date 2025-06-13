@@ -2,11 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#000000">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="format-detection" content="telephone=no">
   <title>Winshine Finishers</title>
   <link rel="stylesheet" href="styles.css">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Preload critical resources -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Header Section -->
@@ -17,7 +25,7 @@
                     <span><i class="fas fa-phone"></i> +254725760297</span>
                     <span><i class="fas fa-envelope"></i> info@winshinefinishers.com</span>
                 </div>
-                <div class="social-links">
+                <div class="social-links"> 
                     <a href="#"><i class="fab fa-facebook"></i></a>
                     <a href="#"><i class="fab fa-twitter"></i></a>
                     <a href="#"><i class="fab fa-instagram"></i></a>
@@ -618,7 +626,49 @@
   <!-- Scripts -->
   <script src="https://unpkg.com/react@17.0.2/umd/react.development.js"></script>
   <script src="script.js"></script>
-    <!-- Contact Section -->
+  <script>
+    // Handle image loading errors
+    document.addEventListener('DOMContentLoaded', function() {
+        // Handle existing error handlers
+        document.querySelectorAll('img[onerror]').forEach(img => {
+            const originalOnError = img.onerror;
+            img.onerror = function(e) {
+                if (originalOnError) originalOnError.call(this, e);
+                if (!this.getAttribute('data-error-handled')) {
+                    this.src = 'https://via.placeholder.com/300x200?text=Image+Not+Available';
+                    this.setAttribute('data-error-handled', 'true');
+                }
+            };
+        });
+
+        // Add error handlers to images without them
+        document.querySelectorAll('img:not([onerror])').forEach(img => {
+            img.onerror = function() {
+                if (!this.getAttribute('data-error-handled')) {
+                    this.src = 'https://via.placeholder.com/300x200?text=Image+Not+Available';
+                    this.setAttribute('data-error-handled', 'true');
+                }
+            };
+        });
+
+        // Handle background images in slides
+        document.querySelectorAll('.slide').forEach(slide => {
+            const bgImage = window.getComputedStyle(slide).backgroundImage;
+            if (bgImage && bgImage !== 'none') {
+                const img = new Image();
+                img.src = bgImage.replace(/^url\(["']?/, '').replace(/["']?\)$/, '');
+                img.onerror = function() {
+                    slide.style.backgroundImage = 'url(https://via.placeholder.com/1200x600?text=Background+Image+Not+Available)';
+                };
+            }
+        });
+    });
+    </script>
+  <!-- Back to top button -->
+  <button id="backToTop" class="back-to-top" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+  <!-- Contact Section -->
     <section id="contact" class="contact-section">
         <div class="container">
             <h2>Get In Touch</h2>
