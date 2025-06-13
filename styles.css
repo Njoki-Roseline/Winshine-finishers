@@ -1164,56 +1164,103 @@ img {
 
 /* Mobile styles - 600px and below */
 @media (max-width: 600px) {
-    .image-grid {
-        grid-template-columns: 2fr;
-        gap: 20px;
-        padding: 16px 12px;
+    html, body {
+        width: 100%;
+        overflow-x: hidden;
     }
     
-    .image-item,
-    .additional-cornices .image-item,
-    .cornices-container > .image-item:first-child {
+    .image-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        padding: 12px;
         width: 100%;
-        max-width: 100%;
+        box-sizing: border-box;
         margin: 0;
+    }
+    
+    .image-item {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        background: white;
         border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        transition: all 0.2s ease;
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+    }
+    
+    /* Image container */
+    .image-container {
+        position: relative;
+        width: 100%;
+        padding-top: 100%; /* 1:1 Aspect Ratio */
+        background: #f8f9fa;
         overflow: hidden;
     }
     
-    /* Adjust image container for mobile */
-    .image-container {
-        padding-top: 0;
-        height: 200px;
-    }
-    
     .image-item img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
         height: 100%;
-        max-height: 200px;
         object-fit: cover;
+        display: block;
     }
     
-    /* Improve caption readability on mobile */
+    /* Caption styling */
     .image-caption {
-        padding: 14px 16px 18px;
-        border-top: 1px solid #f0f0f0;
+        padding: 10px 8px;
+        text-align: center;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
     }
     
     .image-caption h3 {
-        font-size: 1.1rem;
-        margin-bottom: 8px;
+        font-size: 0.85rem;
+        margin: 0 0 4px 0;
+        color: #333;
+        font-weight: 600;
+        line-height: 1.2;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
     
     .image-caption p {
-        font-size: 0.95rem;
-        line-height: 1.5;
-        margin-bottom: 12px;
+        font-size: 0.75rem;
+        color: #666;
+        margin: 0 0 6px 0;
+        line-height: 1.3;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        min-height: 2.6em; /* Ensure consistent height for two lines */
     }
     
     .price {
-        font-size: 1.15rem;
-        margin-top: 12px;
-        padding-top: 12px;
-        border-top: 1px solid #edf2f7;
+        font-size: 0.85rem;
+        font-weight: 700;
+        color: var(--primary-color);
+        margin-top: auto;
+        padding-top: 6px;
+    }
+    
+    /* Ensure consistent card heights */
+    .image-item {
+        height: 100%;
+    }
+    
+    /* Remove any hover effects on mobile */
+    .image-item:hover {
+        transform: none;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     }
 }
 
