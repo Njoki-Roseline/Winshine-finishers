@@ -1243,7 +1243,7 @@ img {
     html {
         overflow-x: hidden;
     }
-        header, .navigation {
+        .main-header, .main-nav {
             height: 60px;
             padding: 0 12px;
             display: flex;
@@ -1254,23 +1254,23 @@ img {
             box-sizing: border-box;
         }
       
-        header h1, .navigation h1 {
+        .main-nav h1 {
             font-size: 1rem;
             margin: 0;
             color: #333;
         }
       
-        .navigation ul {
+        .main-nav ul {
             display: none;
         }
       
-        .navigation .burger-menu {
+        .main-nav .menu-toggle {
             display: block;
             font-size: 1.5rem;
             color: #333;
         }
     
-     body {
+body {
         width: 100%;
         overflow-x: hidden;
         margin: 0;
