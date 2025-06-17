@@ -1030,7 +1030,7 @@ img {
 }
 
 .modal-content h2 {
-    color: var(--primary-color);
+   color: var(--primary-color);
     margin-bottom: 15px;
     font-size: 1.8rem;
 }
