@@ -1,38 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no">
-  <meta name="theme-color" content="#000000">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="format-detection" content="telephone=no">
-  <title>Winshine Finishers</title>
-  <link rel="stylesheet" href="styles.css">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <!-- Preload critical resources -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#000000">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="format-detection" content="telephone=no">
+    <title>Winshine Finishers</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Preload critical resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <!-- Header Section -->
     <header class="main-header">
         <div class="top-bar">
             <div class="container">
-                <div class="contact-info">
-                    <span><i class="fas fa-phone"></i> +254725760297</span>
-                    <span><i class="fas fa-envelope"></i> info@winshinefinishers.com</span>
-                </div>
-                <div class="social-links"> 
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
+                <div class="top-bar-content">
+                    <div class="contact-info">
+                        <span><i class="fas fa-envelope"></i>winshinefinishers1@gmail.com</span>
+                        <span><i class="fas fa-phone"></i>+254717997445 / +254725760297</span>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
-        
+
         <nav class="main-nav">
             <div class="container">
                 <div class="logo-container">
@@ -59,11 +64,15 @@
     <!-- Hero Slider Section -->
     <section class="hero-slider">
         <div class="slider-container">
+            <!-- Navigation Buttons -->
+            <button class="slider-nav prev" aria-label="Previous slide">❮</button>
+            <button class="slider-nav next" aria-label="Next slide">❯</button>
             <!-- Slide 1 - Showroom -->
             <div class="slide active" style="background-image: url('showroom.jpg');">
                 <div class="slide-content">
                     <h2>Your Trusted Partner in Quality Hardware</h2>
-                    <p>Providing top-notch hardware solutions and construction materials for all your building needs.</p>
+                    <p>Providing top-notch hardware solutions and construction materials for all your building needs.
+                    </p>
                     <a href="#contact" class="cta-button">Get a Quote</a>
                 </div>
             </div>
@@ -92,7 +101,8 @@
                 </div>
             </div>
             <!-- Slide 5 -->
-            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1600607687687-1e80a90a5a32?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');">
+            <div class="slide"
+                style="background-image: url('https://images.unsplash.com/photo-1600607687687-1e80a90a5a32?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');">
                 <div class="slide-content">
                     <h2>Modern Architectural Solutions</h2>
                     <p>Innovative designs and materials for contemporary construction projects.</p>
@@ -100,8 +110,8 @@
                 </div>
             </div>
             <!-- Navigation Buttons -->
-            <button class="slider-nav prev">❮</button>
-            <button class="slider-nav next">❯</button>
+            <button class="slider-nav prev" aria-label="Previous slide">❮</button>
+            <button class="slider-nav next" aria-label="Next slide">❯</button>
             <!-- Pagination Dots -->
             <div class="slider-dots">
                 <span class="dot active" data-slide="0"></span>
@@ -117,7 +127,7 @@
     <section id="products" class="featured-products">
         <div class="container">
             <h2>Our Products</h2>
-            
+
             <!-- Category Tabs -->
             <div class="category-tabs">
                 <button class="tab-btn active" data-category="all">All Products</button>
@@ -127,7 +137,7 @@
                 <button class="tab-btn" data-category="plumbing">Plumbing</button>
                 <button class="tab-btn" data-category="hardware">Hardware & Accessories</button>
             </div>
-            
+
             <div class="image-grid">
                 <!-- Building Materials -->
                 <div class="image-item" data-category="materials">
@@ -137,7 +147,7 @@
                         <p>From Ksh 1,500 per sheet</p>
                     </div>
                 </div>
-                
+
                 <div class="image-item" data-category="materials">
                     <img src="body filler.jpg" alt="Body Filler">
                     <div class="image-caption">
@@ -145,15 +155,7 @@
                         <p>From Ksh 1,200 per kg</p>
                     </div>
                 </div>
-                
-                <div class="image-item" data-category="materials">
-                    <img src="skim coat.jpg" alt="Skim Coat">
-                    <div class="image-caption">
-                        <h3>Skim Coat</h3>
-                        <p>From Ksh 2,500 per bag</p>
-                    </div>
-                </div>
-                
+
                 <div class="image-item" data-category="materials">
                     <img src="ponal.jpg" alt="Ponal Wood Glue">
                     <div class="image-caption">
@@ -161,7 +163,7 @@
                         <p>From Ksh 1,000 per liter</p>
                     </div>
                 </div>
-                
+
                 <div class="image-item" data-category="materials">
                     <img src="Gypsum-board-HADA.webp" alt="Gypsum Boards">
                     <div class="image-caption">
@@ -169,7 +171,7 @@
                         <p>From Ksh 900 per sheet</p>
                     </div>
                 </div>
-                
+
                 <div class="image-item" data-category="materials">
                     <img src="skim coat.jpg" alt="Skim Coat">
                     <div class="image-caption">
@@ -177,7 +179,7 @@
                         <p>From Ksh 1,300</p>
                     </div>
                 </div>
-                
+
                 <div class="image-item" data-category="materials">
                     <img src="Conta_Gule multi.jpg" alt="Conta Glue">
                     <div class="image-caption">
@@ -185,7 +187,7 @@
                         <p>From Ksh 150</p>
                     </div>
                 </div>
-                
+
                 <div class="image-item" data-category="materials">
                     <img src="Blue-Essentials-Gypsum-Screws-@650.jpg" alt="Gypsum Screws">
                     <div class="image-caption">
@@ -193,7 +195,7 @@
                         <p>Ksh 650</p>
                     </div>
                 </div>
-                
+
                 <!-- Paints & Coatings -->
                 <div class="image-item" data-category="paints">
                     <img src="paints.jpg" alt="Paints & Coatings">
@@ -202,7 +204,7 @@
                         <p>From Ksh 3,000 per 4L</p>
                     </div>
                 </div>
-                
+
                 <div class="image-item" data-category="paints">
                     <img src="Duracoat-Superfast-1.jpg" alt="Duracoat Superfast">
                     <div class="image-caption">
@@ -210,7 +212,7 @@
                         <p>From Ksh 4,000 per 20L</p>
                     </div>
                 </div>
-                
+
                 <div class="image-item" data-category="paints">
                     <img src="green-tip-brush-4.webp" alt="Paint Brushes">
                     <div class="image-caption">
@@ -218,7 +220,7 @@
                         <p>From Ksh 250</p>
                     </div>
                 </div>
-                
+
                 <!-- Tools & Equipment -->
                 <div class="image-item" data-category="tools">
                     <img src="accessories.jpg" alt="Accessories">
@@ -227,57 +229,70 @@
                         <p>Inquire for price</p>
                     </div>
                 </div>
-                
+
                 <div class="image-item" data-category="paints">
-                    <img src="basco.jpg" alt="Basco Paints" onerror="this.src='https://via.placeholder.com/300x200?text=Basco+Paints';">
+                    <img src="basco.jpg" alt="Basco Paints"
+                        onerror="this.src='https://via.placeholder.com/300x200?text=Basco+Paints';">
                     <div class="image-caption">
                         <h3>Basco Paints</h3>
                         <p>From Ksh 2,100</p>
                     </div>
                 </div>
-                
+
                 <div class="image-item" data-category="plumbing">
-                    <img src="skim coat.jpg" alt="Skim Coat" onerror="this.src='https://via.placeholder.com/300x200?text=Skim+Coat';">
+                    <img src="skim coat.jpg" alt="Skim Coat"
+                        onerror="this.src='https://via.placeholder.com/300x200?text=Skim+Coat';">
                     <div class="image-caption">
                         <h3>Skim Coat</h3>
                         <p>From Ksh 1,350</p>
                     </div>
                 </div>
-                
+
                 <div class="image-item" data-category="materials">
                     <img src="tangit.jpg" alt="Tangit Adhesive">
-                    <h3>Tangit</h3>
-                    <p>High-quality adhesive for various construction needs.</p>
-                    <div class="price">From Ksh 250</div>
+                    <div class="image-caption">
+                        <h3>Tangit</h3>
+                        <div>High-quality adhesive for various construction needs.</div>
+                        <p>From Ksh 250</p>
+                    </div>
                 </div>
-                
+
                 <div class="image-item" data-category="waterproofing">
-                    <img src="Dr fix it.jpg" alt="Dr. Fix It Waterproofing" onerror="this.src='https://via.placeholder.com/300x200?text=Dr+Fix+It';">
-                    <h3>Dr. Fix It</h3>
-                    <p>Premium waterproofing solutions for all your construction needs.</p>
-                    <div class="price">From Ksh 1,200</div>
+                    <img src="Dr fix it.jpg" alt="Dr. Fix It Waterproofing"
+                        onerror="this.src='https://via.placeholder.com/300x200?text=Dr+Fix+It';">
+                    <div class="image-caption">
+                        <h3>Dr. Fix It</h3>
+                        <div>Premium waterproofing solutions for all your construction needs.</div>
+                        <p>From Ksh 1,200</p>
+                    </div>
                 </div>
-                
+
                 <div class="image-item" data-category="tools">
                     <img src="construction tools.jpg" alt="Construction tools">
-                    <h3>Construction Tools</h3>
-                    <p>High quality construction tools for all your construction needs.</p>
-                    <div class="price">Inquire for pricing</div>
+                    <div class="image-caption">
+                        <h3>Construction Tools</h3>
+                        <div>High quality construction tools for all your construction needs.</div>
+                        <p>Inquire for pricing</p>
+                    </div>
                 </div>
-                
+
                 <!-- Plumbing -->
                 <div class="image-item" data-category="plumbing">
                     <img src="ppr.jpg" alt="PPR Fittings">
-                    <h3>PPR</h3>
-                    <p>Durable and reliable PPR fittings for plumbing systems.</p>
-                    <div class="price">From Ksh 150</div>
+                    <div class="image-caption">
+                        <h3>PPR</h3>
+                        <div>Durable and reliable PPR fittings for plumbing systems.</div>
+                        <p>From Ksh 150</p>
+                    </div>
                 </div>
 
                 <div class="image-item" data-category="plumbing">
                     <img src="wash basin screw.jpg" alt="Wash Basin Screw">
-                    <h3>Wash Basin Screw</h3>
-                    <p>High-quality screws for secure wash basin installation.</p>
-                    <div class="price">From Ksh 150</div>
+                    <div class="image-caption">
+                        <h3>Wash Basin Screw</h3>
+                        <div>High-quality screws for secure wash basin installation.</div>
+                        <p>From Ksh 150</p>
+                    </div>
                 </div>
 
                 <div class="image-item" data-category="plumbing">
@@ -288,90 +303,100 @@
                     </div>
                 </div>
 
-                <!-- Cornices Section -->
-                <div class="cornices-section">
+                <!-- Main Cornice Item -->
+                <div class="image-item" data-category="materials">
+                    <img src="plain cornice.jpg" alt="Cornices"
+                        onerror="this.src='https://via.placeholder.com/300x200?text=Cornices';">
+                    <div class="image-caption">
+                        <h3>Cornices</h3>
+                        <div>Elegant decorative cornices for beautiful ceiling edges.</div>
+                        <p>From Ksh 130</p>
+                        <button class="see-more-btn" type="button">See More cornices</button>
+                    </div>
+                </div>
+
+                <!-- Additional Cornices (initially hidden) -->
+                <div class="additional-cornices" id="additional-cornices">
                     <div class="image-item" data-category="materials">
-                        <img src="plain cornice.jpg" alt="Cornices" onerror="this.src='https://via.placeholder.com/300x200?text=Cornices';">
+                        <img src="cornice A083.jpg" alt="Ornate Cornice"
+                            onerror="this.src='https://via.placeholder.com/300x200?text=Ornate+Cornice';">
                         <div class="image-caption">
-                            <h3>Cornices</h3>
-                            <p>Elegant decorative cornices for beautiful ceiling edges.</p>
-                            <div class="price">From Ksh 130</div>
-                            <button class="see-more-btn" onclick="toggleCornices()">See More cornices</button>
+                            <h3>A083 cornices</h3>
+                            <div>Elaborate decorative cornice with intricate details.</div>
+                            <p>From Ksh 130</p>
                         </div>
                     </div>
 
-                    <!-- Additional Cornices Cards (initially hidden) -->
-                    <div class="additional-cornices" id="additional-cornices" style="display: none;">
-                        <div class="image-item" data-category="materials">
-                            <img src="cornice A083.jpg" alt="Ornate Cornice" onerror="this.src='https://via.placeholder.com/300x200?text=Ornate+Cornice';">
-                            <div class="image-caption">
-                                <h3>A083 cornices</h3>
-                                <p>Elaborate decorative cornice with intricate details.</p>
-                                <div class="price">From Ksh 130</div>
-                            </div>
+                    <div class="image-item" data-category="materials">
+                        <img src="Cornice-Plain-400x400.jpg" alt="Modern Cornice"
+                            onerror="this.src='https://via.placeholder.com/300x200?text=Modern+Cornice';">
+                        <div class="image-caption">
+                            <h3>Plain cornices</h3>
+                            <div>Sleek, contemporary cornice design.</div>
+                            <p>From ksh 130</p>
                         </div>
+                    </div>
 
-                        <div class="image-item" data-category="materials">
-                            <img src="Cornice-Plain-400x400.jpg" alt="Modern Cornice" onerror="this.src='https://via.placeholder.com/300x200?text=Modern+Cornice';">
-                            <div class="image-caption">
-                                <h3>Plain cornices</h3>
-                                <p>Sleek, contemporary cornice design.</p>
-                                <div class="price">From ksh 130</div>
-                            </div>
+                    <div class="image-item" data-category="materials">
+                        <img src="PU-CORNICE-FLOWER.webp" alt="Classic Cornice"
+                            onerror="this.src='https://via.placeholder.com/300x200?text=Classic+Cornice';">
+                        <div class="image-caption">
+                            <h3>PU Flower cornices</h3>
+                            <p>Timeless traditional cornice design.</p>
+                            <div class="price">From Ksh 130</div>
                         </div>
-                        <div class="image-item" data-category="materials">
-                            <img src="PU-CORNICE-FLOWER.webp" alt="Classic Cornice" onerror="this.src='https://via.placeholder.com/300x200?text=Classic+Cornice';">
-                            <div class="image-caption">
-                                <h3>PU Flower cornices</h3>
-                                <p>Timeless traditional cornice design.</p>
-                                <div class="price">From Ksh 130</div>
-                            </div>
-                        </div>
-                        <div class="image-item" data-category="materials">
-                            <img src="gypsum-cornice-1000x1000.webp" alt="Luxury Cornice" onerror="this.src='https://via.placeholder.com/300x200?text=Luxury+Cornice';">
-                            <div class="image-caption">
-                                <h3>Luxury Cornice</h3>
-                                <p>Premium cornice with gold accents.</p>
-                                <div class="price">From Ksh 130</div>
-                            </div>
+                    </div>
+
+                    <div class="image-item" data-category="materials">
+                        <img src="gypsum-cornice-1000x1000.webp" alt="Luxury Cornice"
+                            onerror="this.src='https://via.placeholder.com/300x200?text=Luxury+Cornice';">
+                        <div class="image-caption">
+                            <h3>Luxury Cornice</h3>
+                            <p>Premium cornice with gold accents.</p>
+                            <div class="price">From Ksh 130</div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Marble Sheets -->
                 <div class="image-item" data-category="materials">
-                    <img src="marble sheet.jpg" alt="Marble Sheets" onerror="this.src='https://via.placeholder.com/300x200?text=Marble+Sheets';">
+                    <img src="marble sheet.jpg" alt="Marble Sheets"
+                        onerror="this.src='https://via.placeholder.com/300x200?text=Marble+Sheets';">
                     <div class="image-caption">
                         <h3>Marble Sheets</h3>
-                        <p>Premium quality marble sheets for luxurious finishes.</p>
-                        <div class="price">From Ksh 3000 per sheet</div>
+                        <div>Premium quality marble sheets for luxurious finishes.</div>
+                        <p>From Ksh 3000 per sheet</p>
                     </div>
                 </div>
 
-                    <!-- Plugs -->
-                    <div class="image-item" data-category="plumbing">
-                        <img src="plugs.jpg" alt="Plugs" onerror="this.src='https://via.placeholder.com/300x200?text=Plugs';">
-                        <div class="image-caption">
-                            <h3>Wall Plugs</h3>
-                            <p>Durable plugs for various applications.</p>
-                            <div class="price">From Ksh 150 each</div>
-                        </div>
+                <!-- Plugs -->
+                <div class="image-item" data-category="plumbing">
+                    <img src="plugs.jpg" alt="Plugs"
+                        onerror="this.src='https://via.placeholder.com/300x200?text=Plugs';">
+                    <div class="image-caption">
+                        <h3>Wall Plugs</h3>
+                        <div>Durable plugs for various applications.</div>
+                        <p>From Ksh 150 each</p>
                     </div>
+                </div>
 
                 <div class="image-item" data-category="paints">
                     <img src="spray paint.jpg" alt="Spray Paints">
-                    <h3>Spray Paints</h3>
-                    <p>Wide range of colors and finishes for professional results.</p>
-                    <div class="price">From Ksh 350 per can</div>
+                    <div class="image-caption">
+                        <h3>Spray Paints</h3>
+                        <div>Wide range of colors and finishes for professional results.</div>
+                        <p>From Ksh 350 per can</p>
+                    </div>
                 </div>
 
                 <div class="image-item" data-category="tools">
                     <img src="Three-Stars-Round-Head-Shoe-Nail-Shoes-Tacks.jpg" alt="Waterproofing">
-                    <h3>Waterproofing</h3>
-                    <p>High-quality waterproofing solutions for all surfaces.</p>
-                    <div class="price">Inquire for pricing</div>
+                    <div class="image-caption">
+                        <h3>Three Stars Round Head Shoe Nails</h3>
+                        <p>150 Ksh </p>
+                    </div>
                 </div>
-                
+
                 <!-- New Tools Items -->
                 <div class="image-item" data-category="tools">
                     <img src="silicone gun.jpg" alt="Silicone Gun">
@@ -380,7 +405,7 @@
                         <p>From Ksh 350</p>
                     </div>
                 </div>
-                
+
                 <div class="image-item" data-category="tools">
                     <img src="cutting disk.jpg" alt="Cutting Disk">
                     <div class="image-caption">
@@ -388,7 +413,7 @@
                         <p>From Ksh 250</p>
                     </div>
                 </div>
-                
+
                 <div class="image-item" data-category="materials">
                     <img src="mdf boards.jpg" alt="MDF Boards">
                     <div class="image-caption">
@@ -396,7 +421,7 @@
                         <p>From Ksh 3500 per sheet</p>
                     </div>
                 </div>
-                
+
                 <div class="image-item" data-category="tools">
                     <img src="pliers.jpg" alt="Pliers">
                     <div class="image-caption">
@@ -404,41 +429,45 @@
                         <p>From Ksh 450</p>
                     </div>
                 </div>
-                
+
                 <!-- Studs, Channels, and ITH -->
                 <div class="image-item" data-category="materials">
-                    <img src="Gypsum-ceiling-stud.jpg" alt="Metal Studs" onerror="this.src='https://via.placeholder.com/300x200?text=Metal+Studs';">
+                    <img src="Gypsum-ceiling-stud.jpg" alt="Metal Studs"
+                        onerror="this.src='https://via.placeholder.com/300x200?text=Metal+Studs';">
                     <div class="image-caption">
                         <h3>Metal Studs</h3>
-                        <p>High-quality metal studs for drywall framing</p>
-                        <div class="price">From Ksh 115per piece</div>
+                        <div>High-quality metal studs for drywall framing</div>
+                        <p>From Ksh 115per piece</p>
                     </div>
                 </div>
-                
+
                 <div class="image-item" data-category="materials">
-                    <img src="channels.jpg" alt="Furring Channels" onerror="this.src='https://via.placeholder.com/300x200?text=Furring+Channels';">
+                    <img src="channels.jpg" alt="Furring Channels"
+                        onerror="this.src='https://via.placeholder.com/300x200?text=Furring+Channels';">
                     <div class="image-caption">
                         <h3>Furring Channels</h3>
-                        <p>Durable furring channels for ceiling and wall applications</p>
-                        <div class="price">From Ksh 115 per piece</div>
+                        <div>Durable furring channels for ceiling and wall applications</div>
+                        <p>From Ksh 115 per piece</p>
                     </div>
                 </div>
-                
+
                 <div class="image-item" data-category="materials">
-                    <img src="WOOD-FILLER.jpg" alt="Wood Filler" onerror="this.src='https://via.placeholder.com/300x200?text=Wood+Filler';">
+                    <img src="WOOD-FILLER.jpg" alt="Wood Filler"
+                        onerror="this.src='https://via.placeholder.com/300x200?text=Wood+Filler';">
                     <div class="image-caption">
                         <h3>Wood Filler</h3>
-                        <p>High-quality wood filler for seamless repairs and finishing</p>
-                        <div class="price">From Ksh 500</div>
+                        <div>High-quality wood filler for seamless repairs and finishing</div>
+                        <p>From Ksh 500</p>
                     </div>
                 </div>
-                
+
                 <div class="image-item" data-category="materials">
-                    <img src="gypsum filler.png"alt="Gyproc Filler" onerror="this.src='https://via.placeholder.com/300x200?text=Gyproc+Filler';">
+                    <img src="gypsum filler.png" alt="Gyproc Filler"
+                        onerror="this.src='https://via.placeholder.com/300x200?text=Gyproc+Filler';">
                     <div class="image-caption">
                         <h3>Gyproc Filler</h3>
-                        <p>Premium quality filler for seamless joints</p>
-                        <div class="price">From Ksh 1350</div>
+                        <div>Premium quality filler for seamless joints</div>
+                        <p>From Ksh 1350</p>
                     </div>
                 </div>
 
@@ -449,7 +478,7 @@
                         <p>From Ksh 400</p>
                     </div>
                 </div>
-                
+
                 <div class="image-item" data-category="plumbing">
                     <img src="mixer taps.jpg" alt="Mixer Taps">
                     <div class="image-caption">
@@ -457,7 +486,7 @@
                         <p>From Ksh 3500</p>
                     </div>
                 </div>
-                
+
                 <div class="image-item" data-category="paints">
                     <img src="dark oak vanish.jpg" alt="Dark Oak Varnish">
                     <div class="image-caption">
@@ -465,82 +494,85 @@
                         <p>From Ksh 300</p>
                     </div>
                 </div>
-                
+
                 <div class="image-item" data-category="plumbing">
                     <img src="float switch.jpg" alt="Float Switch">
                     <div class="image-caption">
                         <h3>Float Switch</h3>
                         <p>From Ksh 950</p>
-                        <div class="price">From Ksh 950</div>
                     </div>
                 </div>
-                
+
                 <div class="image-item" data-category="tools">
-                    <img src="allan key.jpg" alt="Allan Key" onerror="this.src='https://via.placeholder.com/300x200?text=Allan+Key';">
+                    <img src="allan key.jpg" alt="Allan Key"
+                        onerror="this.src='https://via.placeholder.com/300x200?text=Allan+Key';">
                     <div class="image-caption">
                         <h3>Allan Key Set</h3>
                         <p>From Ksh 200</p>
-                        <div class="price">From Ksh 200</div>
                     </div>
                 </div>
-                
+
                 <div class="image-item" data-category="plumbing">
-                    <img src="interior.jpg" alt="Plumbing Tools" onerror="this.src='https://via.placeholder.com/300x200?text=Plumbing+Tools';">
+                    <img src="interior.jpg" alt="Plumbing Tools"
+                        onerror="this.src='https://via.placeholder.com/300x200?text=Plumbing+Tools';">
                     <div class="image-caption">
                         <h3>Plumbing Tools</h3>
                         <p>From Ksh 30 - Ksh 350</p>
-                        <div class="price">From Ksh 30 - Ksh 350</div>
                     </div>
                 </div>
-                
+
                 <div class="image-item" data-category="plumbing">
-                    <img src="water.jpg" alt="Plumbing Fittings" onerror="this.src='https://via.placeholder.com/300x200?text=Plumbing+Fittings';">
+                    <img src="water.jpg" alt="Plumbing Fittings"
+                        onerror="this.src='https://via.placeholder.com/300x200?text=Plumbing+Fittings';">
                     <div class="image-caption">
                         <h3>Plumbing Fittings</h3>
                         <p>From Ksh 30 - Ksh 350</p>
-                        <div class="price">From Ksh 30 - Ksh 350</div>
                     </div>
                 </div>
-                
+
                 <div class="image-item" data-category="plumbing">
-                    <img src="toilet bowls.jpg" alt="Toilet bowls" onerror="this.src='https://via.placeholder.com/300x200?text=Toilet+bowls';">
+                    <img src="toilet bowls.jpg" alt="Toilet bowls"
+                        onerror="this.src='https://via.placeholder.com/300x200?text=Toilet+bowls';">
                     <div class="image-caption">
                         <h3>Toilet Bowls</h3>
-                        <p>High quality toilet bowls for all your finishing needs.</p>
-                        <div class="price">Inquire for pricing</div>
+                        <div>High quality toilet bowls for all your finishing needs.</div>
+                        <p>Inquire for pricing</p>
                     </div>
                 </div>
-                
+
                 <div class="image-item" data-category="hardware">
-                    <img src="rods.jpg" alt="Curtain Rods" onerror="this.src='https://via.placeholder.com/300x200?text=Curtain+Rods';">
+                    <img src="rods.jpg" alt="Curtain Rods"
+                        onerror="this.src='https://via.placeholder.com/300x200?text=Curtain+Rods';">
                     <div class="image-caption">
                         <h3>Curtain Rods</h3>
                         <p>From Ksh 850</p>
-                        <div class="price">From Ksh 850</div>
                     </div>
                 </div>
-                
+
                 <div class="image-item" data-category="hardware">
-                    <img src="Mindy padlock.jpg" alt="Mindy Padlock" onerror="this.src='https://via.placeholder.com/300x200?text=Mindy+Padlock';">
+                    <img src="Mindy padlock.jpg" alt="Mindy Padlock"
+                        onerror="this.src='https://via.placeholder.com/300x200?text=Mindy+Padlock';">
                     <div class="image-caption">
                         <h3>Mindy Padlock</h3>
-                        <p>High-security padlocks for various applications</p>
-                        <div class="price">From Ksh 800</div>
+                        <div>High-security padlocks for various applications</div>
+                        <p>From Ksh 800</p>
                     </div>
                 </div>
-                
+
                 <div class="image-item" data-category="tools">
-                    <img src="Sandpaper.jpg" alt="Sandpaper" onerror="this.src='https://via.placeholder.com/300x200?text=Sandpaper';">
+                    <img src="Sandpaper.jpg" alt="Sandpaper"
+                        onerror="this.src='https://via.placeholder.com/300x200?text=Sandpaper';">
                     <div class="image-caption">
                         <h3>Sandpaper</h3>
-                        <p>Assorted grit sandpaper for surface preparation</p>
-                        <div class="price">From Ksh 50 per sheet</div>
+                        <div>Assorted grit sandpaper for surface preparation</div>
+                        <p>From Ksh 50 per sheet</p>
                     </div>
                 </div>
-                
+
                 <!-- Moved from Plumbing to Tools & Equipment -->
                 <div class="image-item" data-category="tools">
-                    <img src="hand rivet.jpg" alt="Hand Rivet" onerror="this.src='https://via.placeholder.com/300x200?text=Hand+Rivet';">
+                    <img src="hand rivet.jpg" alt="Hand Rivet"
+                        onerror="this.src='https://via.placeholder.com/300x200?text=Hand+Rivet';">
                     <div class="image-caption">
                         <h3>Hand Rivet</h3>
                         <p>From Ksh 450</p>
@@ -582,7 +614,8 @@
             <div class="about-content">
                 <div class="about-text">
                     <h2>About Winshine Finishers Interiors</h2>
-                    <p>With over years of experience in the industry, Winshine Finishers has been providing top-quality hardware and construction materials to both residential and commercial clients.</p>
+                    <p>With over years of experience in the industry, Winshine Finishers has been providing top-quality
+                        hardware and construction materials to both residential and commercial clients.</p>
                     <ul class="features-list">
                         <li><i class="fas fa-check"></i> Premium Quality Products</li>
                         <li><i class="fas fa-check"></i> Competitive Pricing</li>
@@ -621,59 +654,59 @@
         </div>
     </section>
 
-  </div>
+    </div>
 
-  <!-- Scripts -->
-  <script src="https://unpkg.com/react@17.0.2/umd/react.development.js"></script>
-  <script src="script.js"></script>
-  <script>
-    // Handle image loading errors
-    document.addEventListener('DOMContentLoaded', function() {
-        // Handle existing error handlers
-        document.querySelectorAll('img[onerror]').forEach(img => {
-            const originalOnError = img.onerror;
-            img.onerror = function(e) {
-                if (originalOnError) originalOnError.call(this, e);
-                if (!this.getAttribute('data-error-handled')) {
-                    this.src = 'https://via.placeholder.com/300x200?text=Image+Not+Available';
-                    this.setAttribute('data-error-handled', 'true');
-                }
-            };
-        });
-
-        // Add error handlers to images without them
-        document.querySelectorAll('img:not([onerror])').forEach(img => {
-            img.onerror = function() {
-                if (!this.getAttribute('data-error-handled')) {
-                    this.src = 'https://via.placeholder.com/300x200?text=Image+Not+Available';
-                    this.setAttribute('data-error-handled', 'true');
-                }
-            };
-        });
-
-        // Handle background images in slides
-        document.querySelectorAll('.slide').forEach(slide => {
-            const bgImage = window.getComputedStyle(slide).backgroundImage;
-            if (bgImage && bgImage !== 'none') {
-                const img = new Image();
-                img.src = bgImage.replace(/^url\(["']?/, '').replace(/["']?\)$/, '');
-                img.onerror = function() {
-                    slide.style.backgroundImage = 'url(https://via.placeholder.com/1200x600?text=Background+Image+Not+Available)';
+    <!-- Scripts -->
+    <script src="https://unpkg.com/react@17.0.2/umd/react.development.js"></script>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Handle existing error handlers
+            document.querySelectorAll('img[onerror]').forEach(img => {
+                const originalOnError = img.onerror;
+                img.onerror = function (e) {
+                    if (originalOnError) originalOnError.call(this, e);
+                    if (!this.getAttribute('data-error-handled')) {
+                        this.src = 'https://via.placeholder.com/300x200?text=Image+Not+Available';
+                        this.setAttribute('data-error-handled', 'true');
+                    }
                 };
-            }
+            });
+
+            // Add error handlers to images without them
+            document.querySelectorAll('img:not([onerror])').forEach(img => {
+                img.onerror = function () {
+                    if (!this.getAttribute('data-error-handled')) {
+                        this.src = 'https://via.placeholder.com/300x200?text=Image+Not+Available';
+                        this.setAttribute('data-error-handled', 'true');
+                    }
+                };
+            });
+
+            // Handle background images in slides
+            document.querySelectorAll('.slide').forEach(slide => {
+                const bgImage = window.getComputedStyle(slide).backgroundImage;
+                if (bgImage && bgImage !== 'none') {
+                    const img = new Image();
+                    img.src = bgImage.replace(/^url\(["']?/, '').replace(/["']?\)$/, '');
+                    img.onerror = function () {
+                        slide.style.backgroundImage = 'url(https://via.placeholder.com/1200x600?text=Background+Image+Not+Available)';
+                    };
+                }
+            });
         });
-    });
     </script>
-  <!-- Back to top button -->
-  <button id="backToTop" class="back-to-top" aria-label="Back to top">
-    <i class="fas fa-arrow-up"></i>
-  </button>
-  <!-- Contact Section -->
+    <!-- Back to top button -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    <!-- Contact Section -->
     <section id="contact" class="contact-section">
         <div class="container">
             <h2>Get In Touch</h2>
-            <p class="section-subtitle">We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
-            
+            <p class="section-subtitle">We'd love to hear from you. Send us a message and we'll respond as soon as
+                possible.</p>
+
             <div class="contact-container">
                 <div class="contact-info">
                     <div class="info-item">
@@ -685,28 +718,29 @@
                             <p>Eastern Bypass off Thika Rd ,Next to Exit 11 inn</p>
                         </div>
                     </div>
-                    
+
                     <div class="info-item">
                         <div class="info-icon">
                             <i class="fas fa-phone-alt"></i>
                         </div>
                         <div class="info-content">
                             <h3>Phone Number</h3>
-                            <p>+254 725760297</p> 
+                            <p>+254717997445</p>
+                            <p>+254725760297</p>
                         </div>
                     </div>
-                    
+
                     <div class="info-item">
                         <div class="info-icon">
                             <i class="fas fa-envelope"></i>
                         </div>
                         <div class="info-content">
                             <h3>Email Address</h3>
-                            <p>info@winshinefinishers.com</p>
-                            <p>sales@winshinefinishers.com</p>
+                            <p>winshinefinishers1@gmail.com</p>
+                            
                         </div>
                     </div>
-                
+
                     <div class="info-item">
                         <div class="info-icon">
                             <i class="fas fa-clock"></i>
@@ -718,7 +752,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <form class="contact-form" id="contactForm">
                     <div class="form-group">
                         <input type="text" id="name" name="name" placeholder="Your Name" required>
@@ -748,14 +782,14 @@
                 e.preventDefault();
                 const targetId = this.getAttribute('href');
                 if (targetId === '#') return;
-                
+
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
                     window.scrollTo({
                         top: targetElement.offsetTop - 100, // Adjust for fixed header
                         behavior: 'smooth'
-                    }); 
-                    
+                    });
+
                     // Close mobile menu if open
                     const navLinks = document.querySelector('.nav-links');
                     if (navLinks && navLinks.classList.contains('active')) {
@@ -776,12 +810,13 @@
             <div class="footer-content">
                 <div class="footer-about">
                     <div class="logo-container">
-                        <div class="logo">                                                                              
+                        <div class="logo">
                             <i class="fas fa-tools"></i>
                         </div>
                         <h3 class="logo-text">Winshine <span>Finishers Interiors</span></h3>
                     </div>
-                    <p class="footer-tagline">Your trusted partner for premium construction materials and expert finishing solutions. Committed to quality and excellence in every project.</p>
+                    <p class="footer-tagline">Your trusted partner for premium construction materials and expert
+                        finishing solutions. Committed to quality and excellence in every project.</p>
                     <div class="social-links">
                         <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
@@ -830,5 +865,167 @@
             </div>
         </div>
     </footer>
+    
+    <script>
+        // Mobile menu toggle functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            
+            if (menuToggle && navLinks) {
+                // Initialize menu state
+                let isMenuOpen = false;
+                
+                // Toggle menu function
+                function toggleMenu() {
+                    isMenuOpen = !isMenuOpen;
+                    
+                    if (isMenuOpen) {
+                        // Open menu
+                        navLinks.style.display = 'flex';
+                        // Force reflow to trigger transition
+                        void navLinks.offsetHeight;
+                        navLinks.classList.add('active');
+                        menuToggle.classList.add('active');
+                    } else {
+                        // Close menu
+                        navLinks.classList.remove('active');
+                        menuToggle.classList.remove('active');
+                        // Wait for animation to complete before hiding
+                        setTimeout(() => {
+                            if (!navLinks.classList.contains('active')) {
+                                navLinks.style.display = 'none';
+                            }
+                        }, 300);
+                    }
+                }
+                
+                // Toggle menu on button click
+                menuToggle.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    toggleMenu();
+                });
+                
+                // Close menu when clicking on a nav link
+                const navItems = document.querySelectorAll('.nav-links a');
+                navItems.forEach(link => {
+                    link.addEventListener('click', function(e) {
+                        e.stopPropagation();
+                        navLinks.classList.remove('active');
+                        menuToggle.classList.remove('active');
+                        isMenuOpen = false;
+                        // Wait for animation to complete before hiding
+                        setTimeout(() => {
+                            if (!navLinks.classList.contains('active')) {
+                                navLinks.style.display = 'none';
+                            }
+                        }, 300);
+                    });
+                });
+                
+                // Close menu when clicking outside (only on mobile)
+                function handleClickOutside(e) {
+                    if (window.innerWidth <= 1024 && isMenuOpen && 
+                        !e.target.closest('.nav-links') && 
+                        !e.target.closest('.menu-toggle')) {
+                        toggleMenu();
+                    }
+                }
+                
+                document.addEventListener('click', handleClickOutside);
+                
+                // Close menu on escape key
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape' && isMenuOpen) {
+                        toggleMenu();
+                    }
+                });
+                
+                // Handle window resize
+                function handleResize() {
+                    if (window.innerWidth > 1024) {
+                        // Reset menu on desktop
+                        if (isMenuOpen) toggleMenu();
+                        navLinks.style.display = '';
+                        navLinks.style.maxHeight = '';
+                        navLinks.classList.remove('active');
+                        menuToggle.classList.remove('active');
+                    } else {
+                        // Ensure proper display on mobile
+                        if (!isMenuOpen) {
+                            navLinks.style.display = 'none';
+                        }
+                    }
+                }
+                
+                window.addEventListener('resize', handleResize);
+                
+                // Initialize
+                handleResize();
+            }
+        });
+
+        // Scroll Animation for Services
+        document.addEventListener('DOMContentLoaded', function() {
+            const serviceCards = document.querySelectorAll('.service-card');
+            
+            // Function to check if element is in viewport
+            const isInViewport = (element) => {
+                const rect = element.getBoundingClientRect();
+                return (
+                    rect.top <= (window.innerHeight * 0.8) &&
+                    rect.bottom >= 0
+                );
+            };
+
+            // Function to handle scroll events
+            const handleScroll = () => {
+                serviceCards.forEach(card => {
+                    if (isInViewport(card)) {
+                        card.classList.add('animate');
+                    }
+                });
+            };
+
+            // Add scroll event listener
+            window.addEventListener('scroll', handleScroll);
+            
+            // Initial check in case cards are already in view
+            handleScroll();
+        });
+    </script>
+    
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    
+    <!-- Main JavaScript -->
+    <script src="slider.js"></script>
+    <script src="script.js"></script>
+    
+    <script>
+        // Back to Top Button Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const backToTopButton = document.querySelector('.back-to-top');
+            
+            if (backToTopButton) {
+                window.addEventListener('scroll', () => {
+                    if (window.pageYOffset > 300) {
+                        backToTopButton.classList.add('visible');
+                    } else {
+                        backToTopButton.classList.remove('visible');
+                    }
+                });
+                
+                backToTopButton.addEventListener('click', () => {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+        });
+    </script>
 </body>
 </html>

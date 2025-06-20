@@ -1,67 +1,21 @@
-// Hero Slider
-const slider = document.querySelector('.slider-container');
-const slides = document.querySelectorAll('.slide');
-const dots = document.querySelectorAll('.dot');
-const prevBtn = document.querySelector('.prev');
-const nextBtn = document.querySelector('.next');
-let currentSlide = 0;
-const slideCount = slides.length;
-
-// Initialize slider
-function initSlider() {
-    // Show first slide
-    slides[0].classList.add('active');
-    dots[0].classList.add('active');
-    
-    // Auto slide
-    setInterval(nextSlide, 5000);
-}
-// Go to slide
-function goToSlide(n) {
-    // Remove active class from current slide and dot
-    slides[currentSlide].classList.remove('active');
-    dots[currentSlide].classList.remove('active');
-    
-    // Update current slide
-    currentSlide = (n + slideCount) % slideCount;
-    
-    // Add active class to new slide and dot
-    slides[currentSlide].classList.add('active');
-    dots[currentSlide].classList.add('active');
-}
-
-// Toggle additional cornices section
+ // Toggle additional cornices
 function toggleCornices() {
     const additionalCornices = document.getElementById('additional-cornices');
     const seeMoreBtn = document.querySelector('.see-more-btn');
     
     if (!additionalCornices || !seeMoreBtn) return;
     
-    // Toggle visibility
     const isHidden = additionalCornices.style.display === 'none' || 
-                   additionalCornices.style.display === '';
+                   !additionalCornices.style.display;
     
+    additionalCornices.style.display = isHidden ? 'grid' : 'none';
+    seeMoreBtn.textContent = isHidden ? 'See Less' : 'See More';
+    
+    // Smooth scroll to the button after toggling
     if (isHidden) {
-        additionalCornices.style.display = 'contents'; // Use contents to maintain grid layout
-        seeMoreBtn.textContent = 'See Less';
-    } else {
-        additionalCornices.style.display = 'none';
-        seeMoreBtn.textContent = 'See More';
+        seeMoreBtn.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
 }
-
-// Next slide
-function nextSlide() {
-    goToSlide(currentSlide + 1);
-}
-
-// Previous slide
-function prevSlide() {
-    goToSlide(currentSlide - 1);
-}
-
-// Initialize slider
-initSlider();
 
 // Category Filtering
 function filterProducts(category) {
@@ -95,6 +49,11 @@ function filterProducts(category) {
 
 // Initialize with all products visible
 document.addEventListener('DOMContentLoaded', () => {
+    // Initialize cornices toggle
+    const seeMoreBtn = document.querySelector('.see-more-btn');
+    if (seeMoreBtn) {
+        seeMoreBtn.addEventListener('click', toggleCornices);
+    }
     filterProducts('all');
     
     // Add click event listeners to tabs
@@ -186,10 +145,77 @@ function animateProductCards() {
     });
 }
 
+// Function to check if element is in viewport
+function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+        rect.top <= (window.innerHeight * 0.8) &&
+        rect.bottom >= 0
+    );
+}
+
+// Function to handle scroll animations
+function handleScrollAnimations() {
+    const serviceCards = document.querySelectorAll('.service-card');
+    
+    serviceCards.forEach(card => {
+        if (isInViewport(card) && !card.classList.contains('visible')) {
+            card.classList.add('visible');
+        }
+    });
+}
+
+// Initialize animations when elements come into view
+function initScrollAnimations() {
+    // Create intersection observer for service cards
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                // Stop observing after animation starts
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1, // Trigger when 10% of the element is visible
+        rootMargin: '0px 0px -50px 0px' // Adjust when the animation triggers
+    });
+
+    // Observe all service cards
+    document.querySelectorAll('.service-card').forEach((card, index) => {
+        // Set animation delay based on position
+        card.style.setProperty('--animation-order', index);
+        observer.observe(card);
+    });
+
+    // Initial check for elements in viewport
+    handleScrollAnimations();
+    
+    // Add scroll event listener
+    window.addEventListener('scroll', handleScrollAnimations);
+    
+    // Also check when the page loads
+    window.addEventListener('load', () => {
+        setTimeout(handleScrollAnimations, 500);
+    });
+    
+    // Check again after a short delay to catch any lazy-loaded content
+    setTimeout(handleScrollAnimations, 1000);
+}
+
 // Wait for everything to be loaded
 window.addEventListener('load', () => {
     // Initialize animations with a small delay
-    setTimeout(animateProductCards, 500); // Slight delay to ensure everything is ready
+    setTimeout(() => {
+        animateProductCards();
+        initScrollAnimations();
+    }, 500); // Slight delay to ensure everything is ready
+    
+    // Initialize cornices toggle button
+    const seeMoreBtn = document.querySelector('.see-more-btn');
+    if (seeMoreBtn) {
+        seeMoreBtn.addEventListener('click', toggleCornices);
+    }
     
     const productButtons = document.querySelectorAll('.product-card .btn');
     
@@ -382,8 +408,10 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Show all products by default
-    filterProducts('all');
+    // Initialize with all products visible
+    if (typeof filterProducts === 'function') {
+        filterProducts('all');
+    }
 });
 
 // Initialize AOS (Animate On Scroll) if you want to add animations
