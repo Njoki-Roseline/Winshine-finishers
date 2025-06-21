@@ -1,4 +1,14 @@
 /* Global Styles */
+/* Remove default margin and padding from the top bar */
+.main-header {
+    padding-top: 0 !important;
+}
+
+.top-bar {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+}
+
 /* Make all Font Awesome icons white, excluding slider navigation */
 *,
 *::before,
@@ -87,6 +97,98 @@ img {
     transform: translateZ(0);
     image-rendering: -webkit-optimize-contrast;
     backface-visibility: hidden;
+}
+
+/* Debug styles */
+.debug-outline {
+    outline: 2px solid red !important;
+    outline-offset: 2px;
+}
+
+/* Additional Cornices Section */
+#additional-cornices {
+    display: none; /* Hidden by default */
+    grid-column: 1 / -1; /* Span all columns */
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    width: 100%;
+    margin: 20px 0;
+    padding: 15px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* When visible */
+#additional-cornices[style*="display: grid"] {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Ensure the image items inside have proper spacing */
+#additional-cornices .image-item {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+#additional-cornices .image-item:hover {
+    transform: translateY(-5px);
+}
+
+/* Debug styles for the button */
+#see-more-cornices-btn {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+#see-more-cornices-btn:hover {
+    background-color: #5a32a8;
+}
+
+#see-more-cornices-btn:focus {
+    outline: 3px solid #9f7aea;
+    outline-offset: 2px;
+}
+
+/* Ensure the additional cornices items have consistent styling */
+#additional-cornices .image-item {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 0;
+}
+
+#additional-cornices .image-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for the See More button */
+.see-more-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.see-more-btn:hover {
+    background-color: var(--accent-hover);
 }
 
 /* Image Grid Styling */
@@ -1528,12 +1630,16 @@ img {
 
 /* Navigation Links */
 .nav-links {
-    display: flex;
+    display: flex !important; /* Force display flex */
     gap: 1.5rem;
     list-style: none;
     margin: 0;
     padding: 0;
     transition: all 0.3s ease;
+    opacity: 1 !important; /* Force opacity to 1 */
+    visibility: visible !important; /* Force visibility */
+    position: relative; /* Ensure proper stacking context */
+    z-index: 1001; /* Ensure it stays above other elements */
 }
 
 /* Menu Toggle Button */
@@ -1592,15 +1698,17 @@ img {
     
     /* Mobile navigation styles */
     .nav-links {
-        display: none;
-        position: relative;
+        display: none !important; /* Hide by default, will be toggled by JS */
+        position: fixed;
+        top: 120px; /* Adjust based on your header height */
+        left: 0;
         width: 100%;
         background: white;
         flex-direction: column;
         padding: 10px 0;
         margin: 0;
         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-        z-index: 100;
+        z-index: 1000;
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.3s ease, opacity 0.3s ease;
@@ -1609,9 +1717,10 @@ img {
     
     /* Show nav links when menu is active */
     .nav-links.active {
-        display: flex;
+        display: flex !important;
         max-height: 500px; /* Adjust based on your content */
-        opacity: 1;
+        opacity: 1 !important;
+        visibility: visible !important;
         transition: max-height 0.3s ease, opacity 0.3s ease;
     }
     
@@ -1672,6 +1781,24 @@ img {
         background: rgba(0, 0, 0, 0.05);
         color: var(--primary-color) !important;
     }
+
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: var(--primary-color);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    transform: translateY(0) !important; /* Override any transform that might hide the header */
+}
+
+/* Ensure the header is always visible */
+.main-header.scroll-down,
+.main-header.scroll-up {
+    transform: translateY(0) !important;
+}
 
 .main-header .top-bar {
     display: flex;
@@ -2297,8 +2424,14 @@ img {
     position: relative;
     width: 100%;
     height: 100vh;
-    margin-top: 78px;
+    padding-top: 120px; /* Space for fixed header */
     overflow: hidden;
+    margin-top: 0;
+}
+
+/* Adjust main content to account for fixed header */
+main {
+    padding-top: 80px; /* Space for fixed header */
 }
 
 /* Scroll Animation Styles */
@@ -2357,6 +2490,16 @@ img {
         background: white;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         padding: 5px 0;
+    }
+    
+    /* Adjust hero slider and content for mobile */
+    .hero-slider {
+        padding-top: 80px;
+        height: calc(100vh - 80px);
+    }
+    
+    main {
+        padding-top: 60px;
     }
     
     /* Add padding to body to account for fixed header */

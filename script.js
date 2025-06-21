@@ -1,21 +1,4 @@
- // Toggle additional cornices
-function toggleCornices() {
-    const additionalCornices = document.getElementById('additional-cornices');
-    const seeMoreBtn = document.querySelector('.see-more-btn');
-    
-    if (!additionalCornices || !seeMoreBtn) return;
-    
-    const isHidden = additionalCornices.style.display === 'none' || 
-                   !additionalCornices.style.display;
-    
-    additionalCornices.style.display = isHidden ? 'grid' : 'none';
-    seeMoreBtn.textContent = isHidden ? 'See Less' : 'See More';
-    
-    // Smooth scroll to the button after toggling
-    if (isHidden) {
-        seeMoreBtn.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    }
-}
+ // Make toggleCornices globally available
 
 // Category Filtering
 function filterProducts(category) {
@@ -51,9 +34,27 @@ function filterProducts(category) {
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize cornices toggle
     const seeMoreBtn = document.querySelector('.see-more-btn');
+    const additionalCornices = document.getElementById('additional-cornices');
+    
+    // Hide additional cornices by default (handled in HTML now)
+    
+    // Add visual feedback on hover
     if (seeMoreBtn) {
-        seeMoreBtn.addEventListener('click', toggleCornices);
+        seeMoreBtn.style.cursor = 'pointer';
+        seeMoreBtn.style.transition = 'all 0.2s ease';
+        
+        seeMoreBtn.addEventListener('mouseenter', () => {
+            seeMoreBtn.style.opacity = '0.9';
+            seeMoreBtn.style.transform = 'translateY(-1px)';
+        });
+        
+        seeMoreBtn.addEventListener('mouseleave', () => {
+            seeMoreBtn.style.opacity = '1';
+            seeMoreBtn.style.transform = 'translateY(0)';
+        });
     }
+    
+    // Initialize with all products
     filterProducts('all');
     
     // Add click event listeners to tabs
@@ -233,13 +234,10 @@ window.addEventListener('load', () => {
 // Initialize slider on page load
 window.addEventListener('load', initSlider);
 
-// Mobile Menu Toggle
-const menuToggle = document.querySelector('.menu-toggle');
+// Sticky Header - Modified to always keep header visible
+const header = document.querySelector('.main-header');
 const navLinks = document.querySelector('.nav-links');
-
-menuToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-});
+const menuToggle = document.querySelector('.menu-toggle');
 
 // Close mobile menu when clicking on a nav link
 const navItems = document.querySelectorAll('.nav-links a');
@@ -249,36 +247,77 @@ navItems.forEach(item => {
     });
 });
 
-// Sticky Header
-const header = document.querySelector('.main-header');
-let lastScroll = 0;
+// Remove any scroll-related classes that might be added by other scripts
+if (header) header.classList.remove('scroll-up', 'scroll-down');
 
-window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
-    
-    if (currentScroll <= 0) {
-        header.classList.remove('scroll-up');
-        return;
+// Function to ensure nav links are always visible on desktop
+function ensureNavLinksVisible() {
+    if (window.innerWidth > 1024) { // Desktop view
+        navLinks.style.display = 'flex';
+        navLinks.style.opacity = '1';
+        navLinks.style.visibility = 'visible';
+        navLinks.style.maxHeight = 'none';
+        navLinks.style.position = 'relative';
+    } else {
+        // Reset for mobile
+        if (!navLinks.classList.contains('active')) {
+            navLinks.style.display = 'none';
+            navLinks.style.opacity = '0';
+            navLinks.style.maxHeight = '0';
+        } else {
+            navLinks.style.display = 'flex';
+            navLinks.style.opacity = '1';
+            navLinks.style.visibility = 'visible';
+            navLinks.style.maxHeight = '500px';
+        }
     }
-    
-    if (currentScroll > lastScroll && !header.classList.contains('scroll-down')) {
-        // Scroll Down
-        header.classList.remove('scroll-up');
-        header.classList.add('scroll-down');
-    } else if (currentScroll < lastScroll && header.classList.contains('scroll-down')) {
-        // Scroll Up
-        header.classList.remove('scroll-down');
-        header.classList.add('scroll-up');
-    }
-    
-    lastScroll = currentScroll;
+}
+
+// Toggle mobile menu
+menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    ensureNavLinksVisible();
 });
+
+// Keep the header always visible and ensure nav links are visible
+window.addEventListener('scroll', () => {
+    // Ensure header stays at the top
+    header.style.transform = 'translateY(0)';
+    
+    // Ensure nav links remain visible on desktop
+    if (window.innerWidth > 1024) {
+        ensureNavLinksVisible();
+    }
+});
+
+// Handle window resize
+window.addEventListener('resize', ensureNavLinksVisible);
+
+// Initial check
+ensureNavLinksVisible();
 
 // Back to Top Button
 const backToTopBtn = document.createElement('div');
-backToTopBtn.innerHTML = '<i class="fas fa-arrow-up"></i>';
 backToTopBtn.className = 'back-to-top';
+backToTopBtn.innerHTML = '&uarr;';
 document.body.appendChild(backToTopBtn);
+
+// Initialize cornices toggle on window load
+window.addEventListener('load', () => {
+    const seeMoreBtn = document.querySelector('.see-more-btn');
+    const additionalCornices = document.getElementById('additional-cornices');
+    
+    // Hide additional cornices by default if they exist
+    if (additionalCornices) {
+        additionalCornices.style.display = 'none';
+    }
+    
+    // If seeMoreBtn exists but doesn't have a click handler yet, add one
+    if (seeMoreBtn && !seeMoreBtn.hasAttribute('data-initialized')) {
+        seeMoreBtn.setAttribute('data-initialized', 'true');
+        seeMoreBtn.addEventListener('click', toggleCornices);
+    }
+});
 
 window.addEventListener('scroll', () => {
     if (window.pageYOffset > 300) {
