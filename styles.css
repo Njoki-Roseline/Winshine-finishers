@@ -1,7 +1,7 @@
 /* Global Styles */
 /* Remove default margin and padding from the top bar */
 .main-header {
-    padding-top: 15px !important;
+    padding-top: 0 !important;
 }
 
 .top-bar {
