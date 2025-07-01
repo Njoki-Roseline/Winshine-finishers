@@ -3467,7 +3467,8 @@ main {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .cornices-container .image-caption h3,
@@ -3550,6 +3551,99 @@ main {
     }
 
     #additional-cornices .image-item {
+        max-width: 100%;
+    }
+}
+
+/* Category Tabs Styling */
+/* Category Tabs - Default (Desktop) */
+.category-tabs {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    width: 100%;
+    justify-content: flex-start;
+}
+
+.category-tabs .tab-btn {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    padding: 0.6rem 1.2rem;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.2s ease;
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: #333;
+    white-space: nowrap;
+}
+
+.category-tabs .tab-btn:hover {
+    background: #e9ecef;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.category-tabs .tab-btn.active {
+    background: #2f80ed;
+    color: white;
+    border-color: #2a75d8;
+    box-shadow: 0 4px 12px rgba(47, 128, 237, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Tablet (768px - 992px) */
+@media (max-width: 992px) {
+    .category-tabs {
+        justify-content: center;
+    }
+    
+    .category-tabs .tab-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+    }
+}
+
+/* Mobile (up to 767px) */
+@media (max-width: 767px) {
+    .category-tabs {
+        flex-wrap: wrap;
+        gap: 8px;
+        justify-content: flex-start;
+    }
+    
+    .category-tabs .tab-btn {
+        flex: 1 0 calc(33.333% - 8px);
+        font-size: 0.75rem;
+        padding: 0.6rem 0.3rem;
+        white-space: normal;
+        line-height: 1.2;
+        min-height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .category-tabs .tab-btn.active {
+        font-weight: 600;
+        transform: none;
+    }
+}
+
+/* For very small screens */
+@media (max-width: 480px) {
+    .category-tabs {
+        gap: 6px;
+        margin: 10px 0 15px;
+    }
+    
+    .tab-btn {
+        padding: 10px 12px;
+        font-size: 13px;
+        flex: 1 1 100%;
         max-width: 100%;
     }
 }

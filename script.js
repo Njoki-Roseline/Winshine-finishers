@@ -3,29 +3,48 @@
 // Category Filtering
 function filterProducts(category) {
     const items = document.querySelectorAll('.image-item');
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    
+    // Update active tab first
+    tabButtons.forEach(btn => {
+        if (btn.dataset.category === category) {
+            btn.classList.add('active');
+            // Move the active tab to the top
+            btn.parentNode.insertBefore(btn, btn.parentNode.firstChild);
+        } else {
+            btn.classList.remove('active');
+        }
+    });
+    
+    // Show/hide products with animation
     items.forEach(item => {
         if (category === 'all' || item.dataset.category === category) {
+            // Show matching items
             item.style.display = 'flex';
-            setTimeout(() => {
-                item.style.opacity = '1';
-                item.style.transform = 'translateY(0)';
-            }, 10);
+            // Force reflow to enable transition
+            void item.offsetHeight;
+            item.style.opacity = '1';
+            item.style.transform = 'translateY(0)';
         } else {
+            // Hide non-matching items
             item.style.opacity = '0';
             item.style.transform = 'translateY(20px)';
+            // Wait for the fade-out animation before hiding
             setTimeout(() => {
-                item.style.display = 'none';
+                if (parseFloat(getComputedStyle(item).opacity) < 0.1) {
+                    item.style.display = 'none';
+                }
             }, 300);
         }
     });
     
-    // Update active tab
-    document.querySelectorAll('.tab-btn').forEach(btn => {
-        btn.classList.remove('active');
-        if (btn.dataset.category === category) {
-            btn.classList.add('active');
-        }
-    });
+    // Close mobile menu if open
+    const navLinks = document.querySelector('.nav-links');
+    const menuToggle = document.querySelector('.menu-toggle');
+    if (navLinks && navLinks.classList.contains('active')) {
+        navLinks.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded', 'false');
+    }
 }
 
 // Tab click handlers are now in the DOMContentLoaded event
