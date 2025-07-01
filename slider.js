@@ -3,14 +3,17 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('DOM fully loaded, initializing slider...');
     
     try {
+        console.log('Looking for slider elements...');
         // Find the slider container - try multiple selectors
         const slider = document.querySelector('.slider-container') || document.querySelector('.hero-slider');
+        console.log('Slider container found:', slider);
         if (!slider) {
             throw new Error('Slider container not found. Looking for .slider-container or .hero-slider');
         }
         
         // Find slides within the slider container
         const slides = slider.querySelectorAll('.slide');
+        console.log('Number of slides found:', slides.length);
         if (slides.length === 0) {
             throw new Error('No slides found inside the slider container');
         }
@@ -19,6 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const dots = slider.querySelectorAll('.dot');
         const prevBtn = slider.querySelector('.slider-nav.prev');
         const nextBtn = slider.querySelector('.slider-nav.next');
+        console.log('Navigation buttons - Prev:', prevBtn, 'Next:', nextBtn);
         
         if (!prevBtn || !nextBtn) {
             console.warn('Navigation buttons not found. Make sure you have elements with classes "slider-nav prev" and "slider-nav next"');

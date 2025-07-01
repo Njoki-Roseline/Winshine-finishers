@@ -58,6 +58,9 @@ header {
 .logo {
   height: 50px;
   width: auto;
+  background-color: #3182ce; /* Blue background */
+  border-radius: 8px; /* Optional: adds rounded corners */
+  padding: 5px; /* Optional: adds some space around the logo */
 }
 
 h1 {

@@ -964,33 +964,98 @@
             }
         });
 
-        // Scroll Animation for Services
+        // Service Card Animations
         document.addEventListener('DOMContentLoaded', function() {
             const serviceCards = document.querySelectorAll('.service-card');
+            const servicesSection = document.querySelector('.services-section');
+            let hasAnimated = false;
+            
+            // Check if device is mobile
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
             
             // Function to check if element is in viewport
             const isInViewport = (element) => {
                 const rect = element.getBoundingClientRect();
+                const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+                const elementVisible = 150; // Pixels from the bottom of the viewport
+                
                 return (
-                    rect.top <= (window.innerHeight * 0.8) &&
+                    rect.top <= (windowHeight - elementVisible) &&
                     rect.bottom >= 0
                 );
             };
 
-            // Function to handle scroll events
-            const handleScroll = () => {
-                serviceCards.forEach(card => {
-                    if (isInViewport(card)) {
-                        card.classList.add('animate');
+            // Function to handle animations
+            const handleAnimations = () => {
+                // Check if services section is in view
+                const sectionInView = isInViewport(servicesSection);
+                
+                serviceCards.forEach((card, index) => {
+                    // Only animate if section is in view and not already animated
+                    if (sectionInView && !hasAnimated) {
+                        // Reset animation first to ensure it plays
+                        card.style.animation = 'none';
+                        card.offsetHeight; // Trigger reflow
+                        card.style.animation = null;
+                        
+                        // Add animate class with staggered delay
+                        setTimeout(() => {
+                            card.classList.add('animate');
+                            hasAnimated = true; // Mark as animated
+                        }, index * 200); // Staggered animation with 200ms delay
                     }
                 });
             };
 
-            // Add scroll event listener
-            window.addEventListener('scroll', handleScroll);
+            // Use Intersection Observer for better performance
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        handleAnimations();
+                        // Unobserve after first trigger to prevent re-animation
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            // Observe the services section
+            if (servicesSection) {
+                observer.observe(servicesSection);
+                
+                // Also trigger on initial load if already in view
+                if (isInViewport(servicesSection)) {
+                    handleAnimations();
+                }
+            }
             
-            // Initial check in case cards are already in view
-            handleScroll();
+            // Fallback for browsers that don't support IntersectionObserver
+            if (!('IntersectionObserver' in window)) {
+                if (isMobile) {
+                    // On mobile without IntersectionObserver, animate after a delay
+                    setTimeout(handleAnimations, 500);
+                } else {
+                    // On desktop, use scroll listener
+                    handleAnimations(); // Initial check
+                    window.addEventListener('scroll', handleAnimations);
+                }
+            }
+            
+            // Re-run animations on window resize (in case of orientation change)
+            let resizeTimer;
+            window.addEventListener('resize', function() {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(function() {
+                    if (isInViewport(servicesSection)) {
+                        handleAnimations();
+                    }
+                }, 250);
+            });
         });
     </script>
     
